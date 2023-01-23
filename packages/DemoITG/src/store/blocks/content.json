@@ -1,0 +1,571 @@
+{
+  "store.walkthrough": {
+    "importContext": ["useStartAuthentication", "useSigninWithEmailAndPassword"],
+    "children": [
+      {
+        "componentName":"grid",
+        "props":{
+          "container":true,
+          "direction":"row",
+          "alignItems":"center",
+          "justifyContent": "space-between",
+          "style": "walkthrough-wrapper-header"
+        },
+        "children":[
+          {
+            "componentName": "store-icons",
+            "props":{
+              "name": "Logo"
+            }
+          }
+        ]
+      },
+      {
+        "componentName": "grid",
+        "props": { 
+          "container":true,
+          "mode":"scroll-view",
+          "style": "walkthrough-wrapper"
+        },
+        "children": [
+          {
+            "componentName":"grid",
+            "props":{
+              "container":true,
+              "style": "walkthrough-signin-wrapper"
+            },
+            "children":[
+              {
+                "componentName": "store-form",
+                "props": {
+                  "context": "useStartAuthentication",
+                  "mode": "onChange",
+                  "parseInput": {
+                      "to": {
+                        "email": "email",
+                        "password": "password"
+                      }
+                  },
+                  "schemaValidation": [
+                    {
+                      "id": "email",
+                      "type": "text",
+                      "validationType": "string",
+                      "validations": [
+                        {
+                          "type": "required",
+                          "params": ["El correo electrónico es requerido"]
+                        },
+                        {
+                          "type": "email",
+                          "params": ["Debe ser un email válido"]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "password",
+                      "type": "text",
+                      "validationType": "string",
+                      "validations": [
+                        {
+                          "type": "required",
+                          "params": ["Este campo es requerido"]
+                        },
+                        {
+                          "type": "min",
+                          "params": [
+                            6,
+                            "Tu contraseña debe contener mínimo 6 digitos"
+                          ]
+                        },
+                        {
+                          "type": "matches",
+                          "params": ["/^.*[0-9].*$/", "1 número"]
+                        },
+                        {
+                          "type": "matches",
+                          "params": ["/^.*[a-z].*$/", "1 minúscula"]
+                        },
+                        {
+                          "type": "matches",
+                          "params": ["/^.*[A-Z].*$/", "1 mayúscula"]
+                        },
+                        {
+                          "type": "matches",
+                          "params": [
+                            "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                            "1 caracter especial #*@$ (Opcional)"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "style": "signin-form-wrapper"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props":{
+                      "text": "INICIAR SESIÓN",
+                      "style": "walkthrough-signin-title"
+                    }
+                  },
+                  {
+                    "componentName": "rich-text",
+                    "props":{
+                      "context": "useCustomer",
+                      "text": "Ingresa tu e-mail y tu contraseña",
+                      "style": "walkthrough-signin-description"
+                    }
+                  },
+                  {
+                    "componentName": "store-form.input",
+                    "props": {
+                      "name": "email",
+                      "placeholderBox": "e-mail@ejemplo.com",
+                      "style": "walkthrough-signin-input"
+                    }
+                  },
+                  {
+                    "componentName": "store-form.input",
+                    "props": {
+                      "name": "password",
+                      "isPassword": true,
+                      "placeholderBox": "Contraseña",
+                      "style": "walkthrough-signin-input"
+                    }
+                  },
+                  {
+                    "componentName":"link",
+                    "props":{
+                      "href": "",
+                      "text": "¿Olvidaste tu contraseña?",
+                      "style": "walkthrough-signin-link-password"
+                    }
+                  },
+                  {
+                    "componentName": "store-form.submit",
+                    "props": {
+                      "buttonText": "Iniciar",
+                      "style": "walkthrough-signin-submit"
+                    }
+                  }
+                ]
+                
+              }
+            ]
+          },
+          {
+            "componentName": "walkthrough-view",
+            "props": {
+              "continue": true,
+              "continueUrl": "/auth/signin",
+              "style": "walkthrough-wrapper-buttons"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "store.home":{
+    "importContext": ["useSearch", "useTopSearches", "useCustomer"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props":{
+          "container":true,
+          "mode":"scroll-view"
+        },
+        "children":[
+          {
+            "componentName":"grid",
+            "props":{
+              "container":true,
+              "style":"home-wrapper-header"
+            },
+            "children":[
+              {
+                "componentName": "grid",
+                "props":{
+                  "container":true,
+                  "direction":"row",
+                  "alignItems":"center",
+                  "justifyContent":"space-between",
+                  "style": "home-wrapper-header-top"
+                },
+                "children":[
+                  {
+                    "componentName": "store-icons",
+                    "props": {
+                      "name": "Logo"
+                    }
+                  },
+                  {
+                    "componentName":"grid",
+                    "props":{
+                      "container":true,
+                      "direction":"row",
+                      "justifyContent":"space-between",
+                      "style": "home-wrapper-header-icons"
+                    },
+                    "children":[
+                      {
+                        "componentName": "store-icons",
+                        "props":{
+                          "name": "PinMap"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props":{
+                          "name": "BagIcon"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "search-input",
+                "props": {
+                  "context": "useTopSearches",
+                  "text": "Buscar",
+                  "redirectTo": "/plp-search/?term={term}",
+                  "style": "home-search"
+                }
+              }
+            ]
+          },
+          {
+            "componentName":"grid",
+            "props":{
+              "container":true,
+              "style": "home-wrapper-main"
+            },
+            "children":[
+              {
+                "componentName":"grid",
+                "props":{
+                  "container":true,
+                  "style": "home-wrapper-section"
+                },
+                "children":[
+                  {
+                    "componentName":"image",
+                    "props":{
+                      "uri": "https://cdn.pixabay.com/photo/2017/06/20/22/14/man-2425121_960_720.jpg",
+                      "resizeMode":"contain",
+                      "width": "100%",
+                      "height": 255
+                    }
+                  },
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "context": "useCustomer",
+                      "text": "La moda del mañana",
+                      "style": "home-section-title"
+                    }
+                  },
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "text": "Gabardina trench algodón para dama",
+                      "style": "home-section-description"
+                    }
+                  },
+                  {
+                    "componentName":"link",
+                    "props": {
+                      "href": "",
+                      "text": "Comprar ahora",
+                      "style": "home-section-link"
+                    }
+                  }
+                ]
+              },
+              {
+                "componentName":"grid",
+                "props":{
+                  "container":true,
+                  "style": "home-wrapper-section"
+                },
+                "children":[
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "text": "Nuevos en",
+                      "style": "home-section-title"
+                    }
+                  },
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "text": "Hand-picked daily from the world's best brands and boutiques",
+                      "style": "home-section-description"
+                    }
+                  },
+                  {
+                    "componentName":"grid",
+                    "props":{
+                      "container":true,
+                      "direction":"row",
+                      "style": "home-products-wrapper"
+                    },
+                    "children":[
+                      {
+                        "componentName": "product-list",
+                        "props": {
+                          "numColumns": 1,
+                          "horizontal": true,
+                          "variant": "default",
+                          "department": "maquillaje",
+                          "category": "ojos-y-cejas",
+                          "subCategory": "cejas",
+                          "maxCharts": 20,
+                          "imgProps": {
+                            "width": 150,
+                            "height": 205
+                          },
+                          "style": "home-product-list-new"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName":"link",
+                    "props": {
+                      "href": "",
+                      "text": "Ver colección",
+                      "style": "home-section-link"
+                    }
+                  }
+                ]
+              },
+              {
+                "componentName":"image",
+                "props":{
+                  "type": "background",
+                  "uri": "https://cdn.pixabay.com/photo/2014/10/27/19/18/baby-shoes-505471_960_720.jpg",
+                  "resizeMode": "stretch",
+                  "style": "home-producto-banner"
+                },
+                "children":[
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "text": "La moda del mañana",
+                      "style": "home-product-banner-title"
+                    }
+                  },
+                  {
+                    "componentName":"rich-text",
+                    "props":{
+                      "text": "The boots everyone's talking about",
+                      "style": "home-product-banner-description"
+                    }
+                  }
+                ]
+              },
+              {
+                "componentName":"grid",
+                "props":{
+                  "container":true,
+                  "style": "home-wrapper-section"
+                },
+                "children":[
+                  {
+                    "componentName":"grid",
+                    "props":{
+                      "container":true,
+                      "direction":"row",
+                      "style": "home-products-wrapper"
+                    },
+                    "children":[
+                      {
+                        "componentName": "product-list",
+                        "props": {
+                          "numColumns": 1,
+                          "horizontal": true,
+                          "variant": "default",
+                          "department": "Facial",
+                          "maxCharts": 20,
+                          "imgProps": {
+                            "width": 150,
+                            "height": 205
+                          },
+                          "style": "home-product-list-new"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName":"link",
+                    "props": {
+                      "href": "",
+                      "text": "Ver colección",
+                      "style": "home-section-link"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.categories": {
+    "importContext": ["useCategorySearch", "useTopSearches"],
+    "children": [
+      {
+        "componentName": "category-list",
+        "props": {
+          "context": "useCategorySearch",
+          "redirectTo": "/plp-search/?term={term}",
+          "style": "category-list"
+        }
+      }
+    ]         
+  },
+  "store.Profile":{
+    "children":[
+      {
+        "componentName":"rich-text",
+        "props": {
+          "text": "profile"
+        }
+      }
+    ]
+  },
+  "store.plp-search": {
+    "importContext": ["useSearch", "useTopSearches", "useRedirectToHome"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true,
+          "style": "plp-search-header-container"
+        },
+        "children": [
+          {
+            "componentName": "search-input",
+            "props": {
+              "context": "useTopSearches",
+              "text": "Buscar",
+              "redirectTo": "/plp-search/?term={term}",
+              "style": "input-search"
+            }
+          }
+        ]
+      },
+      {
+        "componentName": "divider",
+        "props": {
+          "style": "divider"
+        }
+      },
+      {
+        "componentName": "product-list",
+        "props": {
+          "numColumns": 2,
+          "imgProps": {
+            "width": 100,
+            "height": 100
+          },
+          "cart": {
+            "text": "Agregar"
+          },
+          "priceRange": {
+            "visible": true,
+            "minValue": 0,
+            "maxValue": 100000
+          },
+          "orderBy": {
+            "options": [
+              {
+                "value": "OrderByTopSaleDESC",
+                "name": "Más vendido",
+                "description": "Productos más demandados"
+              },
+              {
+                "value": "OrderByReleaseDateDESC",
+                "name": "Más nuevo",
+                "description": "Productos recientes"
+              },
+              {
+                "value": "OrderByBestDiscountDESC",
+                "name": "Mejor descuento",
+                "description": "Productos con más descuentos"
+              },
+              {
+                "value": "OrderByPriceDESC",
+                "name": "Mayor precio",
+                "description": "Productos con mayor precio"
+              },
+              {
+                "value": "OrderByPriceASC",
+                "name": "Menor precio",
+                "description": "Precios más bajos"
+              },
+              {
+                "value": "OrderByNameASC",
+                "name": "A-Z",
+                "description": "Alfabéticamente ascendente"
+              },
+              {
+                "value": "OrderByNameDESC",
+                "name": "Z-A",
+                "description": "Alfabéticamente decreciente"
+              }
+            ]
+          },
+          "variant": "default",
+          "style": "plp-search-product-list"
+        }
+      }
+    ]
+  },
+  "store.product": {
+    "importContext": ["useProduct"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true
+        },
+        "children": [
+          {
+            "componentName": "header-link",
+            "props":{
+              "context": "useProduct",
+              "style": "header-link"
+            }        
+          },
+          {
+            "componentName": "product-detail",
+            "props": {  
+              "cart": {
+                "text": "Añadir a Carrito"
+              },                          
+              "productCard": {
+                "maxCharts": 18,
+                "imgProps": {
+                  "width": 100,
+                  "height": 100
+                }, 
+                       
+                "variant": "simple"
+              },
+              "quantitySelector": {
+                "availableQuantityInfo": false,
+                "variant": "default"
+              },
+              "style": "product-detail"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

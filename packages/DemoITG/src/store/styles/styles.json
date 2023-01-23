@@ -1,0 +1,576 @@
+{
+  "styles.walkthrough-wrapper":{
+    "gridContainer":{
+      "paddingHorizontal": 20,
+      "backgroundColor": "{palette.primary.light}"
+    }
+  },
+  "styles.walkthrough-wrapper-header":{
+    "gridContainer":{
+      "flex": null,
+      "backgroundColor": "{palette.primary.light}",
+      "paddingHorizontal": 20,
+      "paddingTop":15
+    }
+  },
+  "styles.walkthrough-header-link":{
+    "text":{
+      "fontSize": 16,
+      "color": "{palette.textSecondary.link}"
+    }
+  },
+  "styles.walkthrough-signin-wrapper":{
+    "gridContainer":{
+      "marginTop": 30,
+      "borderBottomWidth": 1,
+      "borderColor": "{palette.primary.border}"
+    }
+  },
+  "styles.walkthrough-signin-title":{
+    "text":{
+      "fontWeight":"bold",
+      "fontSize": 20,
+      "color":"{palette.textPrimary.dark}"
+    }
+  },
+  "styles.walkthrough-signin-description":{
+    "text":{
+      "fontSize":16,
+      "color": "{palette.textPrimary.dark}",
+      "marginTop": 10,
+      "marginBottom": 25
+    }
+  },
+  "styles.walkthrough-signin-input":{
+    "inputContainer":{
+      "height": 40,
+      "borderRadius": 3,
+      "backgroundColor": "{palette.primary.dark}"
+    },
+    "placeholder":{},
+    "input":{
+      "paddingLeft": 15
+    }
+  },
+  "styles.walkthrough-signin-link-password":{
+    "text":{
+      "marginTop": 5,
+      "textAlign": "right",
+      "textDecorationLine": "underline",
+      "color": "{palette.textPrimary.link}"
+    }
+  },
+  "styles.walkthrough-signin-submit":{
+    "button": {
+      "backgroundColor": "{palette.primary.button}",
+      "paddingVertical": 12,
+      "borderRadius": 3,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "marginVertical": 20
+    },
+    "buttonText": {
+      "color": "{palette.primary.light}",
+      "fontSize": 16
+    }
+  },
+  "styles.walkthrough-buttons-signin-wrapper":{
+    "gridContainer":{
+      "marginTop":20
+    }
+  },
+  "styles.walkthrough-buttons-signin-text":{
+    "text":{
+      "textAlign":"center",
+      "fontWeight": "400",
+      "fontSize":16,
+      "color":"{palette.textPrimary.dark}",
+      "marginTop": 5,
+      "marginBottom": 40
+    }
+  },
+  "styles.walkthrough-wrapper-buttons":{
+    "wrapper":{
+      "position": "relative",
+      "marginTop": 30
+    }
+  },
+
+  
+  "styles.home-wrapper-header":{
+    "gridContainer":{
+      "flex": null,
+      "paddingTop": 15,
+      "paddingBottom": 10,
+      "paddingHorizontal": 20,
+      "backgroundColor":"{palette.primary.light}",
+      "borderBottomWidth": 7,
+      "borderColor":"{palette.primary.dark}"
+    }
+  },
+  "styles.home-wrapper-header-top":{
+    "gridContainer":{
+      "flex": null
+    }
+  },
+  "styles.home-wrapper-header-icons":{
+    "gridContainer":{
+      "flex":null,
+      "width": 60
+    }
+  },
+  "styles.home-search": {
+    "container": {
+      "flexDirection": "row",
+      "flex": null,
+      "alignItems":"center",
+      "backgroundColor": "{palette.primary.dark}",
+      "borderRadius": 3,
+      "height": 40,
+      "paddingHorizontal": 8,
+      "marginTop": 20,
+      "marginBottom": 15
+    },
+    "textStyles": {
+      "color": "{palette.textPrimary.dark}",
+      "padding": "{spacing[2]}"
+    },
+    "searchIcon": {
+      "justifyContent":"center" 
+    }
+  },
+  "styles.home-wrapper-main":{
+    "gridContainer":{
+      "backgroundColor":"{palette.primary.light}"
+    }
+  },
+  "styles.home-wrapper-section":{
+    "gridContainer":{
+      "marginBottom": 25,
+      "paddingHorizontal":20
+    }
+  },
+  "styles.home-section-title":{
+    "text":{
+      "fontWeight":"bold",
+      "fontSize": 20,
+      "color":"{palette.textPrimary.dark}"
+    }
+  },
+  "styles.home-section-description":{
+    "text":{
+      "fontSize": 14,
+      "color":"{palette.textPrimary.dark}"
+    }
+  },
+  "styles.home-section-link":{
+    "container":{
+      "borderWidth": 1
+    },
+    "text":{
+      "backgroundColor": "{palette.primary.button}",
+      "fontSize": 14,
+      "color":"{palette.primary.light}",
+      "paddingVertical": 8,
+      "marginTop": 15,
+      "width": 130,
+      "textAlign":"center"
+    }
+  },
+  "styles.home-products-wrapper":{
+    "gridContainer":{
+      "marginTop":10
+    }
+  },
+  "styles.home-wrapper-product-card":{
+    "container":{
+      "paddingRight": 15,
+      "width": "50%"
+    }
+  },
+  "styles.home-product-info": {
+    "text":{
+      "fontSize": 12,
+      "color": "{palette.textSecondary.link}",
+      "marginVertical": 5
+    }
+  },
+  "styles.home-product-title":{
+    "text":{
+      "fontSize":14,
+      "fontWeight":"bold",
+      "color":"{palette.textPrimary.dark}"
+    }
+  },
+  "styles.home-wrapper-product-price":{
+    "gridContainer":{
+      "marginTop": 4
+    }
+  },
+  "styles.home-product-price":{
+    "text":{
+      "fontSize": 14,
+      "color":"{palette.textPrimary.dark}"
+    }
+  },
+  "styles.home-product-wrapper-icons-colors":{
+    "gridContainer":{
+      "flex": null,
+      "alignItems":"center",
+      "justifyContent": "space-between",
+      "width": 75
+    }
+  },
+  "styles.home-producto-banner":{
+    "container":{
+      "height":220,
+      "justifyContent": "flex-end",
+      "paddingLeft": 15,
+      "paddingBottom": 20
+    }
+  },
+  "styles.home-product-banner-title":{
+    "text":{
+      "fontSize": 24,
+      "fontWeight":"bold",
+      "color":"{palette.primary.light}"
+    }
+  },
+  "styles.home-product-banner-description":{
+    "text":{
+      "fontSize": 16,
+      "color":"{palette.primary.light}"
+    }
+  },
+
+  "style.divider": {
+  },
+  "styles.input-search": {
+    "container": {
+        "flexDirection": "row",
+        "flex": null,
+        "alignItems": "center",
+        "backgroundColor": "#EEF0F2",
+        "height": 40,
+        "paddingHorizontal": 8,
+        "marginTop": 32
+      },
+      "textStyles": {
+        "color": "#1C1C1C",
+        "fontSize": 14
+      },
+      "searchIcon": {
+        "marginRight": 10
+      },
+      "wrapperModalInput": {
+        "backgroundColor": "#EEF0F2",
+        "height": 40,
+        "paddingHorizontal": 8
+      }
+  },
+  "styles.header-logo-wrapper": {
+      "gridContainer": {
+          "marginTop": 10,
+          "alignItems": "center"
+      }
+  },
+  "styles.header-logo-icon": {
+      "container": {
+          "marginLeft": 20
+      }
+  },
+  "styles.category-header-container": {
+      "gridContainer": {
+          "flex": null,
+          "backgroundColor": "#fff",
+          "height": 130,
+          "paddingVertical": 20,
+          "paddingHorizontal": 20
+        }
+  },
+  "styles.plp-search-product-list": {
+    "headerFilter": {
+      "justifyContent": "space-between",
+      "backgroundColor": "#FFF",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "height": 40,
+      "borderRadius": 8
+    },
+    "displayNameHeaderFilter": {
+      "fontSize": 16,
+      "color": "#1C1C1C",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 10
+    },
+    "productContainer": {
+      "backgroundColor": "#FFF",
+      "flex": 1,
+      "paddingHorizontal": 15
+    },
+    "containerDefault": {
+      "width": "100%",
+      "height": 300
+    },
+    "wrapDefault": {
+      "paddingHorizontal": 8,
+      "width": "100%",
+      "maxWidth": "100%"
+    },
+    "imageDefault": {},
+    "imageContainerDefault": {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "paddingVertical": 10,
+      "borderColor": "#EEF0F2",
+      "borderWidth": 1,
+      "borderRadius": 3
+    },
+    "productNameWrapDefault": {
+      "marginRight": 5
+    },
+    "productNameDefault": {
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "#1C1C1C"
+    },    
+    "productPriceWrapDefault": {
+      "justifyContent": "space-between"
+    },
+    "productPriceDiscountDefault": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "fontSize": 13
+    },
+    "productPriceDefault": {
+      "fontSize": 16,
+      "color": "#494A4E",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "cartButtonWrapDefault": {
+    },
+    "buttonStyleSimple": {
+      "marginTop": 10,
+      "alignSelf": "center",
+      "backgroundColor": "#EFF0F4",
+      "width": 100,
+      "height": 30,
+      "borderRadius": 5,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 16,
+      "color": "##C6C7CF",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+
+    "arrowContainer": {
+      "justifyContent": "center",
+      "alignItems": "center",
+      "marginHorizontal": 10,
+      "width": 18,
+      "height": 18,
+      "borderRadius": 18,
+      "backgroundColor": "#1C1C1C"
+    },    
+    "removeButtonWrapper": {
+      "backgroundColor": "#F5F5F5",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 100,
+      "width": 30,
+      "height": 30
+    }, 
+
+
+    "containerPriceRange": {
+      "marginTop": 20,
+      "marginHorizontal": 40,
+      "justifyContent": "center",
+      "alignContent": "center",
+      "alignItems": "center"
+    },
+    "textContainerPriceRange": {
+      "flexDirection": "row",
+      "marginBottom": 40,
+      "alignContent": "center",
+      "width": "100%",
+      "justifyContent": "space-between"
+    }, 
+    "labelPriceRange": {
+      "fontSize": 14,
+      "color": "#777"
+    },
+    "lane": {
+      "backgroundColor": "rgba(57, 77, 166, 0.2)",
+      "position": "absolute",
+      "height": 10,
+      "borderRadius": 6,
+      "width": 200
+    },
+    "knob": {
+      "height": 20,
+      "width": 20,
+      "left": 40,
+      "borderRadius": 10,
+      "backgroundColor": "#fff",
+      "position": "absolute",
+      "elevation": 5,
+      "shadowColor": "#000",
+      "shadowRadius": 4,
+      "shadowOffset": {
+        "height": 2,
+        "width": 0
+      }
+    },
+    "wrapperActionSheet": {
+      "height": 600,
+      "width": "100%"
+    },
+    "wrapperTitleActionsheet": {
+      "flexDirection": "row",
+      "justifyContent": "space-between"
+    },
+    "displayTitleActionsheet": {
+      "fontSize": 14,
+      "color": "#1C1C1C",
+      "marginBottom": 4,
+      "fontFamily": "Poppins-SemiBold",
+      "marginLeft": 20
+    },
+    "removeButtonWrapperActionSheet": {
+      "backgroundColor": "#F5F5F5",
+      "height": 32,
+      "width": 32,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 24,
+      "marginRight": 20
+    },
+    "titleActionStyle": {
+      "fontSize": 14,
+      "color": "#1C1C1C",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 20
+    },
+    "wrapperOptionsActionSheet": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "marginRight": 20,
+      "borderStyle": "solid",
+      "borderBottomColor": "#DDDBDB",
+      "borderBottomWidth": 0.5
+    },
+    "wrapperOptionsTextActionSheet": {
+      "flexDirection": "column",
+      "marginHorizontal": 10,
+      "marginVertical": 5
+    },
+    "nameOptionActionSheet": {
+      "fontSize": 14,
+      "color": "#1C1C1C",
+      "marginBottom": 4,
+      "fontFamily": "Poppins-SemiBold",
+      "marginLeft": 10
+    },
+    "descriptionOptionActionSheet": {
+      "fontSize": 12,
+      "color": "#1C1C1C",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 10
+    },
+    "wrapperTextActionSheet": {
+      "backgroundColor": "#F5F5F5",
+      "height": 35,
+      "justifyContent": "center",
+      "marginTop": 10
+    }
+  },
+  "styles.plp-search-header-container": {
+    "gridContainer": {
+      "flex": null,
+      "marginTop": -20,
+      "backgroundColor": "#fff",
+      "paddingHorizontal": 26,
+      "paddingBottom": 26
+    }
+  },
+
+
+
+
+
+
+  "styles.product-detail":{
+    "title":{
+      "marginHorizontal":"{spacing[3]}",
+      "marginTop": 10,
+      "marginBottom": -22
+    },
+    "containerDescription":{
+      "marginHorizontal":"{spacing[2]}"
+    },
+    "description":{
+      "fontFamily":"Roboto",
+      "fontWeight":"400",
+      "color": "#142032"
+    },
+    "cartButton":{
+      "height": 48,
+      "backgroundColor": "#1C1C1C",
+      "borderRadius": 2,
+      "justifyContent":"center",
+      "alignItems":"center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Roboto",
+      "fontSize": 18,
+      "color": "#fff",
+      "fontWeight": "400",
+      "textAlign": "center"
+    },
+    "textButtonQuantitySelectorSimple":{
+      "color": "#fff",
+      "fontSize": 25,
+      "marginHorizontal":"{spacing[4]}"
+    },
+    "quantityTextSimple":{
+      "color": "#fff",
+      "fontSize":18
+    },
+    "containerSkuSelector":{
+      "marginHorizontal":"{spacing[3]}"
+    }
+  },
+  "styles.header-link":{
+    "container":{
+      "flexDirection":"row",
+      "justifyContent":"space-around",
+      "alignItems":"center",
+      "height": 45,
+      "backgroundColor":"#FFF",
+      "paddingHorizontal": 10
+    },
+    "text":{
+      "fontSize": 20,
+      "fontWeight": "400",
+      "fontFamily":"Roboto",
+      "color": "#142032",
+      "width": "70%"
+    }
+  }
+
+
+}

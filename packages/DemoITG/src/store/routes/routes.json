@@ -1,0 +1,92 @@
+{
+  "rootType": "Stack",
+  "initialRouteName": "walkthrough",
+  "prefixes": [
+    "https://rnframework.com",
+    "rnframework://"
+  ],
+  "screens": {
+    "walkthrough": {
+      "path": "walkthrough",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "title": "Walkthrough",
+        "headerShown":false
+      },
+      "type": "Component"
+    },
+    "main": {
+      "type": "Tab",
+      "options": {
+        "headerShown": false
+      },
+      "screens": {
+        "home": {
+          "path": "home",
+          "options": {
+            "title": "Inicio",
+            "tabBarIconName": "Home",
+            "tabBarActiveBackgroundColor":"#1C1C1C",
+            "tabBarActiveTintColor": "#fff",
+            "tabBarInactiveTintColor": "#1C1C1C"
+          },
+          "type": "Component"
+        },
+        "categories": {
+          "path": "categories",
+          "options": {
+            "title": "Catálogo",
+            "tabBarIconName": "Categories",
+            "tabBarActiveBackgroundColor":"#1C1C1C",
+            "tabBarActiveTintColor": "#fff",
+            "tabBarInactiveTintColor": "#1C1C1C"
+          },
+          "type": "Component"
+        },
+        "Profile": {
+          "path": "Profile",
+          "options": {
+            "title": "Yo",
+            "tabBarIconName": "Yo",
+            "tabBarActiveBackgroundColor":"#1C1C1C",
+            "tabBarActiveTintColor": "#fff",
+            "tabBarInactiveTintColor": "#1C1C1C"
+          },
+          "type": "Component"
+        },
+        "product": {
+          "path": "product/:slug?/p",
+          "options": {
+            "title": "Detail Product",
+            "tabBarIconName": "BagIcon",
+            "tabBarItemHide": true
+          },
+          "type": "Component"
+        },
+        "plp-search": {
+          "path": "plp-search/:department?/:category?/:subCategory?/:brand?",
+          "options": {
+            "headerShown": true,
+            "title": "Resultados",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerRightIconName": "BagIcon",
+            "headerLeftIconName": "ArrowLeftIcon",
+            "headerLeftLogic": "useRedirectToHome",
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#1C1C1C",
+            "headerTitleStyle": {
+              "fontFamily": "Roboto",
+              "fontSize": 20
+            },
+            "tabBarIconName": "BagIcon",
+            "tabBarItemHide": true
+          },
+          "type": "Component"
+        }       
+      }
+    }      
+  }  
+}

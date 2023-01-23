@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "57995857888",
+    "project_id": "morado-mobile",
+    "storage_bucket": "morado-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57995857888:android:a0e80438b38516ffb3a585",
+        "android_client_info": {
+          "package_name": "com.morado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57995857888-ho85ooa53f646jeu5u7jstis7oceqgbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv8eOc29kwzO5VG0yRblXuuJs5UMuQYFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57995857888-ho85ooa53f646jeu5u7jstis7oceqgbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "57995857888-dm1bivdl6jtfq39p2mhvi2mgpdrtsveq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.morado"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

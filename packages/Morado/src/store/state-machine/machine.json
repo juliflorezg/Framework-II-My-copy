@@ -1,0 +1,352 @@
+{
+  "authentication": {
+    "config": {
+      "id": "authentication",
+      "initial": "unauthorized",
+      "context": {
+        "newLink": null,
+        "user": null,
+        "errorMessage": null
+      },
+      "states": {
+        "unauthorized": {
+          "on": {
+            "LOGIN": {
+              "target": "loading",
+              "actions": ["onLoading"]
+            },
+            "REDIRECT_TO_DEFAULT_PAGE": {
+              "actions": ["redirectDefault"]
+            },
+            "SET_USER_DATA": {
+              "actions": ["setUserData"]
+            }
+          }
+        },
+        "loading": {
+          "on": {
+            "SET_USER_DATA": {
+              "actions": ["setUserData"]
+            },
+            "LOGIN_BUSINESS_DATA": {
+              "actions": ["setBusinessData"]
+            },
+            "LOGIN_UTM": {
+              "actions": ["setUTM"]
+            },
+            "LOGIN_SUCCESS": {
+              "target": "authorized",
+              "actions": ["onSuccess"]
+            },
+            "LOGIN_ERROR": {
+              "target": "unauthorized",
+              "actions": ["onError"]
+            }
+          }
+        },
+        "authorized": {
+          "on": {
+            "SET_USER_DATA": {
+              "actions": ["setUserData"]
+            },
+            "LOGIN_BUSINESS_DATA": {
+              "actions": ["setBusinessData"]
+            },
+            "LOGIN_UTM": {
+              "actions": ["setUTM"]
+            },
+            "LOGOUT": {
+              "target": "unauthorized",
+              "actions": ["logout"]
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "actions": [
+        "setUTM",
+        "setBusinessData",
+        "onLoading",
+        "onSuccess",
+        "onError"
+      ]
+    }
+  },
+  "topSearches": {
+    "config": {
+      "id": "topSearches",
+      "initial": "hidden",
+      "context": {
+        "search": "",
+        "suggestions": []
+      },
+      "states": {
+        "hidden": {
+          "on": {
+            "OPEN_SEARCH": {
+              "target": "visible"
+            }
+          }
+        },
+        "visible": {
+          "on": {
+            "SET_SUGGESTIONS": {
+              "actions": ["setSuggestions"]
+            },
+            "SEARCH": {
+              "target": "searching",
+              "actions": ["onVisible"]
+            }
+          }
+        },
+        "searching": {
+          "on": {
+            "SUCCESS": {
+              "actions": ["onSuccess"]
+            },
+            "ERROR": {
+              "actions": ["onError"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "cartManager": {
+    "config": {
+      "id": "cartManager",
+      "initial": "cartEmpty",
+      "context": {
+        "count": 0,
+        "cartId": null,
+        "products": [],
+        "saved": false,
+        "comments": "",
+        "notificationCart": false
+      },
+      "states": {
+        "loading": {
+          "on": {
+            "FETCH_FROM_CLOUD": {
+              "actions": ["fetch-cloud"]
+            },
+            "FETCH_FROM_LOCAL": {
+              "actions": ["fetch-local"]
+            }
+          }
+        },
+        "cartEmpty": {
+          "on": {
+            "ADD": {
+              "target": "active",
+              "actions": ["add-product"]
+            }
+          }
+        },
+        "active": {
+          "on": {
+            "REVALIDATE": {
+              "target": "loading"
+            },
+            "ADD": {
+              "actions": ["add-product"]
+            },
+            "REMOVE": {
+              "actions": ["remove-product"]
+            },
+            "CLEAR_CART": {
+              "target": "cartEmpty",
+              "actions": ["remove-cart"]
+            },
+            "INC": {
+              "actions": ["increment"]
+            },
+            "DEC": {
+              "actions": ["decrement"]
+            },
+            "ADD-COMMENTS": {
+              "actions": ["add-comments"]
+            },
+            "EDIT-VARIANT": {
+              "actions": ["edit-variant"]
+            },
+            "NOTIFICATION": {
+              "actions": ["notification-cart"]
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "actions": ["increment", "decrement"]
+    }
+  },
+  "wishlistManager": {
+    "config": {
+      "id": "wishlistManager",
+      "initial": "wishlistEmpty",
+      "context": {
+        "count": 0,
+        "customerEmail": null,
+        "products": [],
+        "saved": false
+      },
+      "states": {
+        "loading": {
+          "on": {
+            "FETCH_FROM_CLOUD": {
+              "actions": ["fetch-cloud"]
+            },
+            "FETCH_FROM_LOCAL": {
+              "actions": ["fetch-local"]
+            }
+          }
+        },
+        "wishlistEmpty": {
+          "on": {
+            "ADD": {
+              "target": "active",
+              "actions": ["add-product"]
+            }
+          }
+        },
+        "active": {
+          "on": {
+            "REVALIDATE": {
+              "target": "loading"
+            },
+            "ADD": {
+              "actions": ["add-product"]
+            },
+            "REMOVE": {
+              "actions": ["remove-product"]
+            },
+            "REMOVE-ALL": {
+              "target": "wishlistEmpty",
+              "actions": ["remove-product"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "geoManager": {
+    "config": {
+      "id": "geoManager",
+      "initial": "default",
+      "context": {
+        "idCart": null,
+        "selectedAddress": null,
+        "isEmpty": null,
+        "selectedView": "empty-address",
+        "map": {
+          "currentCoordinates": {
+            "latitude": 3.6163965,
+            "longitude": -73.0476117,
+            "latitudeDelta": 15,
+            "longitudeDelta": 15
+          }
+        },
+        "addAddressForm": {
+          "department": "",
+          "city": "",
+          "postalCode": ""
+        }
+      },
+      "states": {
+        "default": {
+          "on": {
+            "FETCH_FROM_CLOUD": {
+              "actions": ["fetch-cloud"]
+            },
+            "FETCH_FROM_LOCAL": {
+              "actions": ["fetch-local"]
+            },
+            "EMPTY-ADDRESS": {
+              "actions": ["select-empty-address-view"]
+            },
+            "ADD-DELIVERY-ADDRESS": {
+              "actions": ["select-delivery-view"]
+            },
+            "ADD": {
+              "actions": ["add-delivery-address"]
+            },
+            "ADD-NEW-ADDRESS": {
+              "actions": ["select-add-new-address-view"]
+            },
+            "NEW-ADDRESS-HANDLER": {
+              "actions": ["new-address-handler"]
+            },
+            "CONFIRM-NEW-ADDRESS": {
+              "target": "done",
+              "actions": ["confirm-new-address"]
+            },
+            "SET-CART-ID": {
+              "actions": ["set-cart-id"]
+            },
+            "SEARCH-MAP-ADDRESS": {
+              "target": "map-view",
+              "actions": ["select-add-new-address-view"]
+            }
+          }
+        },
+        "map-view": {
+          "on": {
+            "NEW-ADDRESS-HANDLER": {
+              "actions": ["new-address-handler"]
+            },
+            "SELECT-SEARCHED-MAP-ADDRESS": {
+              "target": "map-view",
+              "actions": ["select-place"]
+            },
+            "CONFIRM-ADDRESS": {
+              "target": "done"
+            }
+          }
+        },
+        "done": {
+          "on": {
+            "RESET": {
+              "target": "default",
+              "actions": ["reset"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "productManager": {
+    "config": {
+      "id": "productManager",
+      "initial": "selectedProductEmpty",
+      "context": {
+        "products": [],
+        "selectedProduct":{}
+      },
+      "states": {
+        "selectedProductEmpty": {
+            "on": {
+              "SELECTED-PRODUCT": {
+                "target":"active",
+                "actions": ["selected-product"]
+              }
+            }
+        },
+        "active": {
+          "on": {
+            "ADD": {
+              "actions": ["add-variant"]
+            },
+            "REMOVE": {
+              "actions": ["remove-variant"]
+            },
+            "SELECTED-PRODUCT":{
+              "actions":["selected-product"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

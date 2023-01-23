@@ -1,0 +1,137 @@
+{
+  "rootType": "Stack",
+  "initialRouteName": "walkthrough",
+  "prefixes": ["https://rnframework.com", "rnframework://"],
+  "screens": {
+    "walkthrough": {
+      "path": "walkthrough",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "title": "Walkthrough",
+        "headerShown": false
+      },
+      "type": "Component"
+    },
+    "auth": {
+      "type": "Stack",
+      "initialRouteName": "signin",
+      "path": "auth",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "title": "",
+        "headerShown": false
+      },
+      "screens": {
+        "signin": {
+          "path": "signin",
+          "options": {
+            "title": "",
+            "headerShown": false
+          },
+          "type": "Component"
+        },
+        "signup": {
+          "path": "signup",
+          "options": {
+            "title": "",
+            "headerShown": false
+          },
+          "type": "Component"
+        },
+        "recovery-password": {
+          "path": "recovery/password",
+          "options": {
+            "title": "Recovery Password",
+            "headerShown": false
+          },
+          "type": "Component"
+        },
+        "success-recovery": {
+          "path": "recovery/success",
+          "options": {
+            "title": "Recovery Success",
+            "headerShown": false
+          },
+          "type": "Component"
+        },
+        "confirm-password": {
+          "path": "recovery/confirm",
+          "options": {
+            "title": "Confirm Password",
+            "headerShown": false
+          },
+          "type": "Component"
+        },
+        "otp-code-validate": {
+          "path": "password/recovery/validate",
+          "options": {
+            "title": "Recovery Validate",
+            "headerShown": false
+          },
+          "type": "Component"
+        }
+      }
+    },
+    "main": {
+      "type": "Tab",
+      "options": {
+        "headerShown": false
+      },
+      "screens": {
+        "home": {
+          "path": "home",
+          "options": {
+            "title": "Inicio",
+            "tabBarIconName": "Home",
+            "tabBarActiveTintColor": "#DD1E2F",
+            "tabBarInactiveTintColor": "#888888"
+          },
+          "type": "Component"
+        },
+        "account": {
+          "path": "account",
+          "options": {
+            "title": "Mi Cuenta",
+            "tabBarIconName": "MyAccount",
+            "tabBarActiveTintColor": "#DD1E2F",
+            "tabBarInactiveTintColor": "#888888"
+          },
+          "type": "Component"
+        },
+        "category": {
+          "path": "category",
+          "options": {
+            "title": "Categorías",
+            "tabBarIconName": "Categories",
+            "tabBarActiveTintColor": "#DD1E2F",
+            "tabBarInactiveTintColor": "#888888"
+          },
+          "type": "Component"
+        }
+      }
+    },
+    "search": {
+      "path": "search/:department?/:category?/:subCategory?/:brand?",
+      "options": {
+        "title": "Resultados",
+        "headerStyle": {
+          "backgroundColor": "#fff"
+          
+        },
+        "headerTintColor": "#1A1919",
+        "headerTitleStyle": {
+          "fontFamily": "Poppins-SemiBold",
+          "fontSize": 18
+        }
+      },
+      "type": "Component"
+    },
+    "product": {
+      "path": "product/:slug?/p",
+      "options": {
+        "title": "Product"
+      },
+      "type": "Component"
+    }
+  }
+}

@@ -1,0 +1,704 @@
+{
+  "hooks": [
+    {
+      "name": "useProductRecommendations",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://master--copservir.myvtex.com/_v/private/graphql/v1",
+        "query": "productRecommendations"
+      },
+      "parseResponse": {
+        "to": {
+          "products": {
+            "pathValue": "productRecommendations",
+            "parseFunction": "ProductSearch",
+            "function": "NormalizeProduct",
+            "sync": true
+          }
+        }
+      },
+      "exec": [
+        {
+          "name": "useProductRecommendations",
+          "params": ["{inputRecommendation}"]
+        }
+      ]
+    },
+    {
+      "name": "useTopSearches",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://master--copservir.myvtex.com/_v/private/graphql/v1",
+        "query": "topSearches"
+      },
+      "parseResponse": {
+        "to": {
+          "searches": "{topSearches.searches}"
+        }
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "params": ["topSearches", "OPEN_SEARCH"]
+        },
+        {
+          "name": "useTopSearches",
+          "onSuccess": [
+            {
+              "name": "StateMachine",
+              "function": "send",
+              "dependsOn": "useTopSearches",
+              "params": [
+                "topSearches",
+                "SET_SUGGESTIONS",
+                {
+                  "suggestions": "{searches}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useProduct",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://master--copservir.myvtex.com/_v/private/graphql/v1",
+        "query": "productQuery"
+      },
+      "parseResponse": {
+        "to": {
+          "product": {
+            "pathValue": "product",
+            "parseFunction": "ProductSearch",
+            "function": "NormalizeProductDetail",
+            "sync": true
+          }
+        }
+      },
+      "exec": [
+        {
+          "name": "useProduct",
+          "params": ["{input}"]
+        }
+      ]
+    },
+    {
+      "name": "useSearch",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://master--copservir.myvtex.com/_v/private/graphql/v1",
+        "query": "productSearch"
+      },
+      "parseResponse": {
+        "to": {
+          "products": {
+            "pathValue": "productSearch.products",
+            "parseFunction": "ProductSearch",
+            "function": "NormalizeProduct",
+            "sync": true
+          }
+        }
+      },
+      "exec": [
+        {
+          "name": "ProductSearch",
+          "sync": true,
+          "function": "SearchQuery",
+          "params": ["{input}"]
+        },
+        {
+          "name": "useSearch",
+          "dependsOn": "ProductSearch",
+          "params": ["{query}"]
+        }
+      ]
+    },
+
+    {
+      "name": "useLocalCustomerData",
+      "fetchOptions": {
+        "url": "",
+        "query": ""
+      },
+      "componentType": "omni-hook",
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
+        }
+      ]
+    },
+    {
+      "name": "useCreateSession",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "method": "PATCH",
+        "url": "https://copservirtest.myvtex.com/api/sessions"
+      },
+      "parseResponse": {
+        "to": {
+          "session": "sessionToken",
+          "segment": "segmentToken"
+        }
+      },
+      "exec": [
+        {
+          "name": "useCreateSession",
+          "onSuccess": [
+            {
+              "name": "CookieManager",
+              "function": "setCookie",
+              "dependsOn": "useCreateSession",
+              "params": [
+                "https://copservirtest.myvtex.com",
+                {
+                  "name": "sessionToken",
+                  "value": "{session}",
+                  "path": "/",
+                  "version": "1",
+                  "expires": "2025-05-30T12:30:00.00-05:00",
+                  "secure": true,
+                  "httpOnly": true
+                }
+              ]
+            },
+            {
+              "name": "CookieManager",
+              "function": "setCookie",
+              "dependsOn": "useCreateSession",
+              "params": [
+                "https://copservirtest.myvtex.com",
+                {
+                  "name": "segmentToken",
+                  "value": "{segment}",
+                  "path": "/",
+                  "version": "1",
+                  "expires": "2025-05-30T12:30:00.00-05:00",
+                  "secure": true,
+                  "httpOnly": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useStartResendAccessKey",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": ""
+      },
+      "headerOptions": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "parseResponse": {
+        "to": {
+          "authenticationToken": "authenticationToken"
+        }
+      },
+      "exec": [
+        {
+          "name": "useStartResendAccessKey",
+          "params": [
+            {
+              "callbackUrl": "",
+              "account": "",
+              "scope": ""
+            }
+          ]
+        }
+      ],
+      "businessLogic": {
+        "middlewares": [
+          {
+            "name": "useResendAccessKey",
+            "dependsOn": "useStartResendAccessKey",
+            "inheritProps": ["authenticationToken"],
+            "params": [
+              {
+                "authenticationToken": "{authenticationToken}",
+                "locale": "es-CO"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "useResendAccessKey",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": ""
+      },
+      "headerOptions": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
+        },
+        {
+          "name": "useResendAccessKey",
+          "dependsOn": "StateMachine",
+          "params": [
+            {
+              "email": "{context.user.email}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useLocalCustomerData",
+      "fetchOptions": {
+        "url": "",
+        "query": ""
+      },
+      "componentType": "omni-hook",
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
+        }
+      ]
+    },
+    {
+      "name": "useRedefinePassword",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://master--copservir.myvtex.com/_v/private/graphql/v1?workspace=master",
+        "query": "redefinePassword"
+      },
+      "parseResponse": {
+        "to": {
+          "redefinePassword": "redefinePassword"
+        }
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
+        },
+        {
+          "name": "useRedefinePassword",
+          "dependsOn": "StateMachine",
+          "params": [
+            {
+              "email": "{context.user.email}",
+              "currentPassword": "{newPassword}",
+              "newPassword": "{context.user.currentPassword}"
+            }
+          ],
+          "onSuccess": [
+            {
+              "name": "Navigation",
+              "function": "linkTo",
+              "params": ["/home"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useSendAccessKey",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": ""
+      },
+      "headerOptions": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "exec": [
+        {
+          "name": "useSendAccessKey",
+          "onSuccess": [
+            {
+              "name": "Navigation",
+              "function": "linkTo",
+              "params": ["/auth/recovery/success"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useStartAuthentication",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": ""
+      },
+      "headerOptions": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "parseResponse": {
+        "to": {
+          "authenticationToken": "authenticationToken"
+        }
+      },
+      "exec": [
+        {
+          "name": "useStartAuthentication",
+          "params": [
+            {
+              "callbackUrl": "",
+              "account": "",
+              "scope": ""
+            }
+          ],
+          "onSuccess": [
+            {
+              "name": "StateMachine",
+              "function": "send",
+              "params": [
+                "authentication",
+                "LOGIN",
+                {
+                  "user": {
+                    "email": "{email}"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "businessLogic": {
+        "middlewares": [
+          {
+            "name": "useSendAccessKey",
+            "dependsOn": "useStartAuthentication",
+            "inheritProps": ["authenticationToken"],
+            "params": [
+              {
+                "email": "{email}",
+                "authenticationToken": "{authenticationToken}",
+                "locale": "es-CO"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "useFirstStepSignup",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "",
+        "query": ""
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "params": [
+            "authentication",
+            "LOGIN",
+            {
+              "user": {
+                "email": "{email}",
+                "documentId": "{documentId}",
+                "phone": "{phone}"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useSecondStepSignup",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "",
+        "query": ""
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "params": [
+            "authentication",
+            "SET_USER_DATA",
+            {
+              "user": {
+                "firstName": "{firstName}",
+                "lastName": "{lastName}",
+                "gender": "{gender}"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useSignupClassic",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://b2b.lopido.com/oauth2/api"
+      },
+      "parseResponse": {
+        "to": {
+          "active": "content.activo",
+          "id": "content.identificacionUsuario",
+          "firstName": "content.nombre",
+          "lastName": "content.apellido",
+          "profileId": "content.codigoPerfil",
+          "email": "content.correoElectronico",
+          "phone": "content.celular"
+        }
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
+        },
+        {
+          "name": "useSignupClassic",
+          "dependsOn": "StateMachine",
+          "params": [
+            {
+              "idSistema": 4,
+              "identificacionUsuario": "{context.user.documentId}",
+              "correoElectronico": "{context.user.email}",
+              "nombre": "{context.user.firstName}",
+              "apellido": "{context.user.lastName}",
+              "clave": "{password}",
+              "claveConfirm": "{confirmPassword}",
+              "fechaNacimiento": "1997-12-08",
+              "genero": "{context.user.gender}",
+              "policies": true,
+              "termsConditions": true,
+              "telefonoContacto": "{context.user.phone}",
+              "celular": "{context.user.phone}"
+            }
+          ],
+          "onSuccess": [
+            {
+              "name": "Navigation",
+              "function": "linkTo",
+              "params": ["/home"]
+            }
+          ],
+          "onError": [
+            {
+              "name": "StateMachine",
+              "function": "send",
+              "params": ["authentication", "LOGIN_ERROR"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useStartSignInWithEmailAndPassword",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://copservirtest.myvtex.com/_v/public/graphql/v1",
+        "query": "oAuth"
+      },
+      "headerOptions": {
+        "Content-Type": "application/json"
+      },
+      "parseResponse": {
+        "to": {
+          "oAuth": "oAuth"
+        }
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "params": ["authentication", "LOGIN"]
+        },
+        {
+          "name": "useStartSignInWithEmailAndPassword",
+          "params": [
+            {
+              "provider": "Copservir QA",
+              "redirectUrl": "https://copservirtest.myvtex.com"
+            }
+          ]
+        },
+        {
+          "name": "Commons",
+          "function": "GetRedirectLocationFromHeaders",
+          "dependsOn": "useStartSignInWithEmailAndPassword",
+          "params": ["{oAuth}"]
+        }
+      ],
+      "businessLogic": {
+        "middlewares": [
+          {
+            "name": "useSignInWithEmailAndPassword",
+            "dependsOn": "Commons",
+            "params": [
+              {
+                "client_id": "{client_id}",
+                "state": "{state}",
+                "usuario": "{email}",
+                "clave": "{password}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "useCustomer",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "method": "GET",
+        "url": "https://copservirtest.myvtex.com/api/sessions?items=account.id,account.accountName,store.channel,store.countryCode,store.cultureInfo,store.currencyCode,store.currencySymbol,store.admin_cultureInfo,creditControl.creditAccounts,creditControl.deadlines,creditControl.minimumInstallmentValue,authentication.storeUserId,authentication.storeUserEmail,profile.firstName,profile.document,profile.email,profile.id,profile.isAuthenticated,profile.lastName,profile.phone,public.favoritePickup,public.utm_source,public.utm_medium,public.utm_campaign,public.utmi_cp,public.utmi_p,public.utmi_pc&supportedLocales=en-US,es-AR,pt-BR,it-IT,ro-RO,ja-JP,ko-KR,fr-FR,nl-NL,bs-BA,bg-BG,th-TH&__bindingId=5fcd8d2b-1148-4905-9276-b42d51c97ada"
+      },
+      "parseResponse": {
+        "to": {
+          "firstName": "namespaces.profile.firstName.value",
+          "lastName": "namespaces.profile.lastName.value",
+          "phone": "namespaces.profile.phone.value",
+          "isAuthenticated": "namespaces.profile.isAuthenticated.value"
+        }
+      },
+      "exec": [
+        {
+          "name": "useCustomer"
+        },
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "dependsOn": "useCustomer",
+          "params": [
+            "authentication",
+            "SET_USER_DATA",
+            {
+              "user": {
+                "firstName": "{firstName}",
+                "lastName": "{lastName}"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "useSignInWithEmailAndPassword",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "url": "https://b2b.lopido.com/oauth2/api/auth"
+      },
+      "parseResponse": {
+        "to": {
+          "auth_code": "auth_code"
+        }
+      },
+      "exec": [
+        {
+          "name": "useSignInWithEmailAndPassword",
+          "params": [
+            {
+              "redirect_uri": "https://vtexid.vtex.com.br/VtexIdAuthSiteKnockout/ReceiveAuthorizationCode.ashx",
+              "idSistema": 3,
+              "policies": true,
+              "termsConditions": true
+            }
+          ]
+        }
+      ],
+      "businessLogic": {
+        "middlewares": [
+          {
+            "name": "useReceiveAuthorizationCode",
+            "dependsOn": "useSignInWithEmailAndPassword",
+            "params": [
+              {
+                "auth_code": "{auth_code}",
+                "state": "{state}"
+              }
+            ]
+          },
+          {
+            "name": "useCreateSession",
+            "params": [
+              {
+                "public": {
+                  "storeUserEmail": {
+                    "value": "{email}"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "useCustomer"
+          },
+          {
+            "name": "Navigation",
+            "function": "linkTo",
+            "params": ["/home"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "useReceiveAuthorizationCode",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "method": "GET",
+        "url": "https://vtexid.vtex.com.br/VtexIdAuthSiteKnockout/ReceiveAuthorizationCode.ashx"
+      },
+      "headerOptions": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "exec": [
+        {
+          "name": "useReceiveAuthorizationCode",
+          "onSuccess": [
+            {
+              "name": "Commons",
+              "function": "GetURLParams",
+              "dependsOn": "useReceiveAuthorizationCode",
+              "params": ["accountAuthCookieValue", "{url}"]
+            },
+            {
+              "name": "StateMachine",
+              "function": "send",
+              "params": ["authentication", "LOGIN_SUCCESS"]
+            },
+            {
+              "name": "CookieManager",
+              "function": "setCookie",
+              "dependsOn": "Commons",
+              "params": [
+                "https://copservirtest.myvtex.com",
+                {
+                  "name": "VtexIdclientAutCookie",
+                  "value": "{Commons}",
+                  "path": "/",
+                  "version": "1",
+                  "expires": "2025-05-30T12:30:00.00-05:00",
+                  "secure": true,
+                  "httpOnly": true
+                }
+              ]
+            }
+          ],
+          "onError": [
+            {
+              "name": "StateMachine",
+              "function": "send",
+              "params": ["authentication", "LOGIN_ERROR"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "store.walkthrough": {
+    "children": [
+      "",
+      {
+        "componentName": "image",
+        "props": {
+          "type": "background",
+          "uri": "https://i.imgur.com/mr3tndy.png",
+          "resizeMode": "stretch"
+        },
+        "children": [
+          {
+            "componentName": "walkthrough-view",
+            "props": {
+              "continue": true,
+              "signup": true,
+              "google": true,
+              "facebook": true,
+              "continueUrl": "/auth/signin/classic/password/first",
+              "googleUrl": "/walkthrough",
+              "facebookUrl": "/walkthrough",
+              "signupUrl": "/auth/1step"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "store.first-step": {
+    "children": [
+      "",
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "Por favor llena esta información para completar tu registro",
+          "style": "singUp-form-description"
+        }
+      },
+      {
+        "componentName": "link",
+        "props": {
+          "href": "/auth/2step",
+          "style": "singUp-form-secondStep-buttonContainer"
+        },
+        "options": {
+          "activeOpacity": 0.8
+        },
+        "children": [
+          {
+            "componentName": "rich-text",
+            "props": {
+              "text": "FANCY BUTTON (second step)",
+              "style": "singUp-form-secondStep-buttonText"
+            }
+          }
+        ]
+      },
+      {
+        "componentName": "store-form",
+        "props": {
+          "scrollView": false,
+          "schemaValidation": [
+            {
+              "id": "email",
+              "type": "text",
+              "validationType": "string",
+              "validations": [
+                {
+                  "type": "required",
+                  "params": ["El correo electronico es requerido"]
+                },
+                {
+                  "type": "email",
+                  "params": ["Debe ser un correo valido"]
+                }
+              ]
+            }
+          ],
+          "mode": "onChange",
+          "revalidateMode": "onChange",
+          "style": "signup-datos-registro"
+        },
+        "children": [
+          {
+            "componentName": "grid",
+            "props": {
+              "mode": "scroll-view"
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Datos personales",
+                  "style": "signup-datos-registro-title"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "nombre",
+                  "placeholder": "Primer Nombre",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "apellido",
+                  "placeholder": "Primer Apellido",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "apellido",
+                  "placeholder": "Documento",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "apellido",
+                  "placeholder": "Fecha de expedición",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Datos de ubicación",
+                  "style": "signup-datos-registro-title"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "correo",
+                  "placeholder": "Correo electrónico*",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "telefono",
+                  "variant": "phone",
+                  "placeholder": "Número de teléfono*",
+                  "style": "signup-datos-registro-input-phone"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "department",
+                  "placeholder": "Departamento",
+                  "style": "signup-datos-registro-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "city",
+                  "placeholder": "Ciudad",
+                  "style": "signup-datos-registro-input"
+                }
+              }
+            ]
+          },
+          {
+            "componentName": "grid",
+            "props": {
+              "style": "wrapper-registro-submit"
+            },
+            "children": [
+              {
+                "componentName": "store-form.submit",
+                "props": {
+                  "buttonText": "Continuar",
+                  "style": "signup-datos-registro-submit"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "store.second-step": {
+    "children": [
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "I am in the second step",
+          "style": "singUp-form-description"
+        }
+      },
+      {
+        "componentName": "link",
+        "props": {
+          "text": "Go to contact info",
+          "href": "/auth/signup-datos-contacto"
+        }
+      }
+    ]
+  },
+
+  "store.signup-datos-contacto": {
+    "children": [
+      "",
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true,
+          "style": "signup-datos-contacto-main-container"
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "scrollView": false,
+              "schemaValidation": [
+                {
+                  "id": "email",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "required",
+                      "params": ["El correo electronico es requerido"]
+                    },
+                    {
+                      "type": "email",
+                      "params": ["Debe ser un correo valido"]
+                    }
+                  ]
+                }
+              ],
+              "mode": "onChange",
+              "revalidateMode": "onChange",
+              "style": "signup-datos-contacto"
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Datos de contacto",
+                  "style": "signup-datos-contacto-title"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Ingresa tu nombre, apellido, correo y teléfono celular",
+                  "style": "signup-datos-contacto-description"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "nombre",
+                  "placeholder": "Primer nombre*",
+                  "style": "signup-datos-contacto-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "apellido",
+                  "placeholder": "Primer apellido*",
+                  "style": "signup-datos-contacto-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "correo",
+                  "placeholder": "Correo electrónico*",
+                  "style": "signup-datos-contacto-input"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "telefono",
+                  "variant": "phone",
+                  "placeholder": "Número de teléfono*",
+                  "style": "signup-datos-contacto-input-phone"
+                }
+              },
+              {
+                "componentName": "store-form.submit",
+                "props": {
+                  "buttonText": "Continuar",
+                  "style": "signup-datos-contacto-submit"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

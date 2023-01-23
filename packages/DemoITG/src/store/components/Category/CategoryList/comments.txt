@@ -1,0 +1,41 @@
+Si se usarà listado de Subcategories, Añadir:
+
+const [showDetail, setShowDetail] = useState(false)
+
+  const showModalDetail = () => {
+    setShowDetail(!showDetail)
+  };
+
+  With Subcategories
+  
+  const renderItem = useCallback((category: any) => (
+      <>
+      <TouchableOpacity onPress={showModalDetail}>
+        <View style={[ defaultStyles.containerCategory ,style?.containerCategory ]}>
+          <Text style={[ defaultStyles.textCategory, style?.textCategory ]}>
+            {category.item.name}
+          </Text>
+        </View>
+      </TouchableOpacity> 
+      {
+        showDetail &&
+        <View >
+          {
+            category.item.children.map( item => {
+              return(
+                <TouchableOpacity key={item.id} onPress={() => onSubmit(item.name) }>
+                  <View style={[ defaultStyles.containerSubcategory ,style?.containerSubcategory ]}>
+                    <Text style={[ defaultStyles.textSubcategory, style?.textSubcategory ]}>
+                      {item.name}
+                    </Text>
+                    <ArrowRightSecondVariant stroke={"#1C1C1C"} />
+                  </View>
+                </TouchableOpacity>
+              )
+            })
+          } 
+        </View>  
+      }
+      </>        
+    ), [])
+

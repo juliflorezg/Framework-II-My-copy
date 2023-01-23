@@ -1,0 +1,72 @@
+{
+  "rootType": "Stack",
+  "initialRouteName": "walkthrough",
+  "prefixes": ["https://rnframework.com", "rnframework://"],
+  "screens": {
+    "walkthrough": {
+      "path": "walkthrough",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "title": "Walkthrough",
+        "headerShown": false
+      },
+      "type": "Component"
+    },
+    "auth": {
+      "type": "Stack",
+      "path": "auth",
+      "initialRouteName": "auth",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "headerShown": false
+      },
+      "screens": {
+        "first-step": {
+          "path": "1step",
+          "options": {
+            "title": "Registroooo",
+            "headerShown": true,
+            "headerTitleAlign": "center",
+            "headerShownVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#000214"
+            },
+            "headerTintColor": "#c1d3ff",
+            "headerTitleStyle": {
+              "fontfamily": "Poppins-SemiBold",
+              "fontsize": "16"
+            }
+          },
+          "type": "Component"
+        },
+        "second-step": {
+          "path": "2step",
+          "options": {
+            "title": "Second Step",
+            "headerShown": true,
+            "headerTitleAlign": "center",
+            "headerShownVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#301052"
+            },
+            "headerTintColor": "#9a0052",
+            "headerTitleStyle": {
+              "fontfamily": "Poppins-SemiBold",
+              "fontsize": "26"
+            }
+          },
+          "type": "Component"
+        },
+        "signup-datos-contacto": {
+          "path": "signup-datos-contacto",
+          "type": "Component",
+          "options": {
+            "headerShown": true,
+            "headerShadowVisible": false,
+            "title": "datos de contacto"
+          }
+        }
+      }
+    }
+  }
+}

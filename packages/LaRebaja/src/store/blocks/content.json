@@ -1,0 +1,3568 @@
+{
+  "store.walkthrough": {
+    "children": [
+      {
+        "componentName": "walkthrough-view",
+        "props": {
+          "style": "fake-sheet"
+        },
+        "children": [
+          {
+            "componentName": "store-icons",
+            "props": {
+              "name": "LogoComponent",
+              "style": "logo-component"
+            }
+          },
+          {
+            "componentName": "slider",
+            "props": [
+              {
+                "title": "Hazlo saludable",
+                "body": "Mejora tu salud comprando las medicinas que necesitas para cumplir tu tratamiento a la perfección."
+              },
+              {
+                "title": "Delivery las 24hrs",
+                "body": "MILO® es un modificador de leche que tiene ingredientes naturales (malta, leche y cocoa) y es el único con ACTIV-GO® "
+              },
+              {
+                "title": "Pickup cuando desees",
+                "body": "MILO® es un modificador de leche que tiene ingredientes naturales (malta, leche y cocoa) y es el único con ACTIV-GO® "
+              }
+            ]
+          },
+          {
+            "componentName": "link",
+            "props": {
+              "text": "Crear una cuenta",
+              "href": "/auth/signup",
+              "style": "new-account"
+            }
+          },
+          {
+            "componentName": "link",
+            "props": {
+              "text": "Iniciar sesión",
+              "href": "/auth/signin",
+              "style": "signin-login"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "store.signup": {
+    "importContext": [
+      "useFirstStepSignup",
+      "useSecondStepSignup",
+      "useSignupClassic"
+    ],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "flex": 1
+        },
+        "children": [
+          {
+            "componentName": "grid",
+            "props": {
+              "container": true,
+              "style": "background-gradient"
+            },
+            "children": [
+              {
+                "componentName": "store-icons",
+                "props": {
+                  "name": "BackgroundGradient"
+                }
+              }
+            ]
+          },
+          {
+            "componentName": "grid",
+            "props": {
+              "flex": 1,
+              "style": "signup-wrapper-grid"
+            },
+            "children": [
+              {
+                "componentName": "store-icons",
+                "props": {
+                  "name": "LogoComponent",
+                  "style": "logo-component-form"
+                }
+              },
+              {
+                "componentName": "stepper",
+                "props": {
+                  "style": "stepper-styles",
+                  "title": "Crea una cuenta",
+                  "description": [
+                    "Datos de contacto",
+                    "Datos personales",
+                    "Confirmación de la cuenta"
+                  ]
+                },
+                "children": [
+                  {
+                    "componentName": "store-form",
+                    "props": {
+                      "style": "signup-form",
+                      "context": "useFirstStepSignup",
+                      "parseInput": {
+                        "to": {
+                          "documentId": "documentId",
+                          "email": "email",
+                          "phone": "phone"
+                        }
+                      },
+                      "schemaValidation": [
+                        {
+                          "id": "email",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "required",
+                              "params": ["El correo electrónico es requerido"]
+                            },
+                            {
+                              "type": "email",
+                              "params": ["Debe ser un email válido"]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "documentId",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^[0-9]+$/",
+                                "Solo pueden ser números"
+                              ]
+                            },
+                            {
+                              "type": "required",
+                              "params": [
+                                "El numero de identificación es requerido"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "phone",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "required",
+                              "params": ["Este campo es requerido"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^[0-9]+$/",
+                                "Solo pueden ser números"
+                              ]
+                            },
+                            {
+                              "type": "min",
+                              "params": [
+                                10,
+                                "El celular no puede ser menor a 10 caracteres"
+                              ]
+                            },
+                            {
+                              "type": "max",
+                              "params": [
+                                10,
+                                "El celular no puede ser mayor a 10 caracteres"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "style": "step-item-container",
+                          "container": true
+                        },
+                        "children": [
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "documentId",
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPersonOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Número de documento",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center",
+                                      "style": "form-input.wrapper-grid"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "email",
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconEmailOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Correo Electrónico",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center",
+                                      "style": "form-input.wrapper-grid"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "phone",
+                              "variant": "phone",
+                              "hideFlag": true,
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPhoneOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Teléfono de contacto",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center",
+                                      "style": "form-input.wrapper-grid"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input-phone"
+                            }
+                          },
+                          {
+                            "componentName": "stepper.submit",
+                            "props": {
+                              "buttonText": "Continuar",
+                              "style": "signin-form-submit"
+                            }
+                          },
+                          {
+                            "componentName": "grid",
+                            "props": {
+                              "direction": "column",
+                              "container": true,
+                              "alignItems": "center",
+                              "style": "recover-password-container"
+                            },
+                            "children": [
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "context": "useLocalCustomerData",
+                                  "text": "¿Ya tienes cuenta?",
+                                  "style": "recover-password-text"
+                                }
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/auth/signin",
+                                  "text": "Ingresa",
+                                  "style": "recover-password-link"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "store-form",
+                    "props": {
+                      "style": "signup-form",
+                      "context": "useSecondStepSignup",
+                      "parseInput": {
+                        "to": {
+                          "firstName": "firstName",
+                          "lastName": "lastName",
+                          "gender": "gender"
+                        }
+                      },
+                      "schemaValidation": [
+                        {
+                          "id": "firstName",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "required",
+                              "params": ["Este campo es requerido"]
+                            },
+                            {
+                              "type": "max",
+                              "params": [
+                                32,
+                                "El nombre no puede ser mayor a 50 caracteres"
+                              ]
+                            },
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ]+$/",
+                                "El nombre solo puede contener letras"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "lastName",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "required",
+                              "params": ["Este campo es requerido"]
+                            },
+                            {
+                              "type": "max",
+                              "params": [
+                                32,
+                                "El apellido no puede ser mayor a 50 caracteres"
+                              ]
+                            },
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ]+$/",
+                                "El apellido solo puede contener letras"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "style": "step-item-container",
+                          "container": true
+                        },
+                        "children": [
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "firstName",
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPersonOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Nombres",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "lastName",
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPersonOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Apellidos",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "variant": "options-list",
+                              "name": "gender",
+                              "style": "list",
+                              "list": [
+                                {
+                                  "title": "Masculino",
+                                  "value": 1
+                                },
+                                {
+                                  "title": "Femenino",
+                                  "value": 2
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "componentName": "stepper.submit",
+                            "props": {
+                              "buttonText": "Continuar",
+                              "style": "signin-form-submit"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "store-form",
+                    "props": {
+                      "style": "signup-form",
+                      "context": "useSignupClassic",
+                      "parseInput": {
+                        "to": {
+                          "password": "password",
+                          "confirmPassword": "confirmPassword"
+                        }
+                      },
+                      "schemaValidation": [
+                        {
+                          "id": "password",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "min",
+                              "params": [
+                                8,
+                                "Tu contraseña debe contener mínimo 8 caracteres"
+                              ]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[0-9].*$/", "1 número"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[a-z].*$/", "1 minúscula"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[A-Z].*$/", "1 mayúscula"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                                "1 caracter especial #*@$ (Opcional)"
+                              ]
+                            },
+                            {
+                              "type": "required",
+                              "params": ["El campo es obligatorio"]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "confirmPassword",
+                          "type": "text",
+                          "validationType": "string",
+                          "validations": [
+                            {
+                              "type": "min",
+                              "params": [
+                                8,
+                                "Tu contraseña debe contener mínimo 8 caracteres"
+                              ]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[0-9].*$/", "1 número"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[a-z].*$/", "1 minúscula"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": ["/^.*[A-Z].*$/", "1 mayúscula"]
+                            },
+                            {
+                              "type": "matches",
+                              "params": [
+                                "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                                "1 caracter especial #*@$ (Opcional)"
+                              ]
+                            },
+                            {
+                              "type": "required",
+                              "params": ["El campo es obligatorio"]
+                            },
+                            {
+                              "type": "oneOf",
+                              "params": [
+                                {
+                                  "type": "ref",
+                                  "params": ["password"]
+                                },
+                                "Las contraseñas deben coincidir por completo"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "style": "step-item-container",
+                          "container": true
+                        },
+                        "children": [
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "password",
+                              "isPassword": true,
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPadlockOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Contraseña",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "name": "confirmPassword",
+                              "isPassword": true,
+                              "placeholderComponent": {
+                                "children": [
+                                  {
+                                    "componentName": "grid",
+                                    "children": [
+                                      {
+                                        "componentName": "store-icons",
+                                        "props": {
+                                          "name": "IconPadlockOpaque",
+                                          "style": "icon-person"
+                                        }
+                                      },
+                                      {
+                                        "componentName": "rich-text",
+                                        "props": {
+                                          "text": "Confirma tu contraseña",
+                                          "style": "text-icon"
+                                        }
+                                      }
+                                    ],
+                                    "props": {
+                                      "container": true,
+                                      "direction": "row",
+                                      "alignItems": "center"
+                                    }
+                                  }
+                                ]
+                              },
+                              "style": "form-input"
+                            }
+                          },
+                          {
+                            "componentName": "store-form.input",
+                            "props": {
+                              "variant": "options-list",
+                              "name": "accept-term-and-conditions",
+                              "style": "list",
+                              "multi": true,
+                              "list": [
+                                {
+                                  "children": [
+                                    {
+                                      "componentName": "grid",
+                                      "props": {
+                                        "container": true,
+                                        "direction": "row",
+                                        "style": "term-conditions-wrapper"
+                                      },
+                                      "children": [
+                                        {
+                                          "componentName": "rich-text",
+                                          "props": {
+                                            
+                                          },
+                                          "children": [
+                                            {
+                                              "componentName": "rich-text",
+                                              "props": {
+                                                "text": " Acepto ",
+                                                "style": "term-and-conditions"
+                                              }
+                                            },
+                                            {
+                                              "componentName": "link",
+                                              "props": {
+                                                "href": "/auth/signin",
+                                                "text": "políticas de tratamiento de datos y términos y condiciones.",
+                                                "style": "term-and-conditions.link"
+                                              }
+                                            }
+       
+                                          ]
+                                      
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "value": "term-and-conditions"
+                                }
+                              ]
+                            }
+                          },
+                                                    {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth/signin",
+                              "text": "Ver condiciones",
+                              "style": "conditions.link"
+                            }
+                          },
+                          {
+                            "componentName": "stepper.submit",
+                            "props": {
+                              "buttonText": "Confirmar",
+                              "style": "signin-form-submit"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.signin": {
+    "importContext": [
+      "useStartSignInWithEmailAndPassword",
+      "useSignInWithEmailAndPassword",
+      "useReceiveAuthorizationCode",
+      "useCreateSession",
+      "useCustomer"
+    ],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "flex": 1
+        },
+        "children": [
+          {
+            "componentName": "grid",
+            "props": {
+              "container": true,
+              "style": "background-gradient"
+            },
+            "children": [
+              {
+                "componentName": "store-icons",
+                "props": {
+                  "name": "BackgroundGradient"
+                }
+              }
+            ]
+          },
+          {
+            "componentName": "grid",
+            "props": {
+              "flex": 1,
+              "style": "signin-wrapper-grid"
+            },
+            "children": [
+              {
+                "componentName": "store-icons",
+                "props": {
+                  "name": "LogoComponent",
+                  "style": "logo-component-form"
+                }
+              },
+              {
+                "componentName": "store-form",
+                "props": {
+                  "context": "useStartSignInWithEmailAndPassword",
+                  "mode": "onChange",
+                  "parseInput": {
+                    "to": {
+                      "email": "email",
+                      "password": "password"
+                    }
+                  },
+                  "style": "signin-form"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Ingresa a tu cuenta",
+                      "style": "signin-title"
+                    }
+                  },
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Para continuar, ingresa tu correo y contraseña",
+                      "style": "signin-text"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "mode": "scroll-view",
+                      "showsVerticalScrollIndicator": false
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-form.input",
+                        "props": {
+                          "name": "email",
+                          "placeholderComponent": {
+                            "children": [
+                              {
+                                "componentName": "grid",
+                                "children": [
+                                  {
+                                    "componentName": "store-icons",
+                                    "props": {
+                                      "name": "IconPersonOpaque",
+                                      "style": "icon-person"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Email o número de identificación",
+                                      "style": "text-icon"
+                                    }
+                                  }
+                                ],
+                                "props": {
+                                  "container": true,
+                                  "direction": "row",
+                                  "alignItems": "center",
+                                  "style": "form-input.wrapper-grid"
+                                }
+                              }
+                            ]
+                          },
+                          "style": "form-input"
+                        }
+                      },
+                      {
+                        "componentName": "store-form.input",
+                        "props": {
+                          "name": "password",
+                          "isPassword": true,
+                          "placeholderComponent": {
+                            "children": [
+                              {
+                                "componentName": "grid",
+                                "children": [
+                                  {
+                                    "componentName": "store-icons",
+                                    "props": {
+                                      "name": "IconPadlock",
+                                      "style": "icon-person"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Contraseña",
+                                      "style": "text-icon"
+                                    }
+                                  }
+                                ],
+                                "props": {
+                                  "container": true,
+                                  "direction": "row",
+                                  "alignItems": "center",
+                                  "style": "form-input.wrapper-grid"
+                                }
+                              }
+                            ]
+                          },
+                          "style": "form-input"
+                        }
+                      },
+                      {
+                        "componentName": "store-form.submit",
+                        "props": {
+                          "buttonText": "Iniciar sesión",
+                          "style": "signin-form-submit"
+                        }
+                      },
+                      {
+                        "componentName": "link",
+                        "props": {
+                          "text": "Crear una cuenta",
+                          "href": "/auth/signup",
+                          "style": "new-account"
+                        }
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "style": "recover-password-container"
+                        },
+                        "children": [
+                          {
+                            "componentName": "rich-text",
+                            "props": {
+                              "context": "useLocalCustomerData",
+                              "text": "¿Olvidaste tu contraseña? ",
+                              "style": "recover-password-text"
+                            }
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth/recovery/password",
+                              "text": "Recupérala aquí",
+                              "style": "recover-password-link"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.recovery-password": {
+    "importContext": ["useStartAuthentication", "useSendAccessKey"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "context": "useStartAuthentication",
+          "flex": 1,
+          "style": "wrapper-recovery"
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "style": "recovery-form",
+              "context": "",
+              "mode": "onChange",
+              "parseInput": {
+                "to": {
+                  "email": "email"
+                }
+              },
+              "schemaValidation": [
+                {
+                  "id": "email",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "required",
+                      "params": ["El correo electrónico es requerido"]
+                    },
+                    {
+                      "type": "email",
+                      "params": ["Debe ser un email válido"]
+                    }
+                  ]
+                }
+              ]
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Recuperar contraseña",
+                  "style": "signin-title"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Ingresa tu correo de registro para enviarte un e-mail de recuperación",
+                  "style": "signin-text"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "email",
+                  "style": "form-input",
+                  "placeholderComponent": {
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "children": [
+                          {
+                            "componentName": "store-icons",
+                            "props": {
+                              "name": "IconEmailOpaque",
+                              "style": "icon-person"
+                            }
+                          },
+                          {
+                            "componentName": "rich-text",
+                            "props": {
+                              "text": "Correo Electrónico",
+                              "style": "text-icon"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "container": true,
+                          "direction": "row",
+                          "alignItems": "center",
+                          "style": "wrapper-input-recovery"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "componentName": "store-form.submit",
+                "props": {
+                  "buttonText": "Continuar",
+                  "style": "signin-form-submit"
+                }
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/auth/signin",
+                  "text": "Regresar al Login",
+                  "style": "recover-link"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.success-recovery": {
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "flex": 1,
+          "style": "wrapper-recovery"
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "style": "recovery-form"
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Recuperar contraseña",
+                  "style": "signin-title"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Ingresa tu correo de registro para enviarte un e-mail de recuperación",
+                  "style": "signin-text"
+                }
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "direction": "row",
+                  "justifyContent": "center",
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "componentName": "store-icons",
+                    "props": {
+                      "name": "IconRecoverySuccess",
+                      "style": "icon-recovery"
+                    }
+                  }
+                ]
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "text": "Continuar",
+                  "href": "/auth/recovery/confirm",
+                  "style": "link-success-recovery"
+                }
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/auth/signin",
+                  "text": "Regresar al Login",
+                  "style": "recover-link"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.confirm-password": {
+    "importContext": ["useRedefinePassword"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "flex": 1,
+          "style": "wrapper-recovery"
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "style": "recovery-form",
+              "mode": "onChange",
+              "parseInput": {
+                "to": {
+                  "newPassword": "confirmPassword"
+                }
+              },
+              "schemaValidation": [
+                {
+                  "id": "password",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "min",
+                      "params": [
+                        8,
+                        "Tu contraseña debe contener mínimo 8 caracteres"
+                      ]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[0-9].*$/", "1 número"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[a-z].*$/", "1 minúscula"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[A-Z].*$/", "1 mayúscula"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": [
+                        "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                        "1 carácter especial #*@$ (Opcional)"
+                      ]
+                    },
+                    {
+                      "type": "required",
+                      "params": ["El campo es obligatorio"]
+                    }
+                  ]
+                },
+                {
+                  "id": "confirmPassword",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "min",
+                      "params": [
+                        8,
+                        "Tu contraseña debe contener mínimo 8 caracteres"
+                      ]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[0-9].*$/", "1 número"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[a-z].*$/", "1 minúscula"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": ["/^.*[A-Z].*$/", "1 mayúscula"]
+                    },
+                    {
+                      "type": "matches",
+                      "params": [
+                        "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                        "1 carácter especial #*@$ (Opcional)"
+                      ]
+                    },
+                    {
+                      "type": "required",
+                      "params": ["El campo es obligatorio"]
+                    },
+                    {
+                      "type": "oneOf",
+                      "params": [
+                        {
+                          "type": "ref",
+                          "params": ["password"]
+                        },
+                        "Las contraseñas deben coincidir por completo"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Ingresa tu clave para continuar",
+                  "style": "signin-title"
+                }
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "flex": 1,
+                  "container": true,
+                  "justifyContent": "center",
+                  "style": "wrapper-confirm-password"
+                },
+                "children": [
+                  {
+                    "componentName": "store-form.input",
+                    "props": {
+                      "name": "password",
+                      "style": "form-input",
+                      "isPassword": true,
+                      "placeholderComponent": {
+                        "children": [
+                          {
+                            "componentName": "grid",
+                            "children": [
+                              {
+                                "componentName": "store-icons",
+                                "props": {
+                                  "name": "IconPadlockOpaque",
+                                  "style": "icon-person"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Contraseña",
+                                  "style": "text-icon"
+                                }
+                              }
+                            ],
+                            "props": {
+                              "container": true,
+                              "direction": "row",
+                              "alignItems": "center"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "componentName": "store-form.input",
+                    "props": {
+                      "name": "confirmPassword",
+                      "isPassword": true,
+                      "style": "form-input",
+                      "placeholderComponent": {
+                        "children": [
+                          {
+                            "componentName": "grid",
+                            "children": [
+                              {
+                                "componentName": "store-icons",
+                                "props": {
+                                  "name": "IconPadlockOpaque",
+                                  "style": "icon-person"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Confirmar contraseña",
+                                  "style": "text-icon"
+                                }
+                              }
+                            ],
+                            "props": {
+                              "container": true,
+                              "direction": "row",
+                              "alignItems": "center"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "componentName": "store-form.submit",
+                    "props": {
+                      "buttonText": "Continuar",
+                      "style": "signin-form-submit"
+                    }
+                  },
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/auth/signin",
+                      "text": "Regresar al Login",
+                      "style": "recover-link"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.otp-code-validate": {
+    "importContext": [
+      "useStartResendAccessKey",
+      "useResendAccessKey",
+      "useLocalCustomerData"
+    ],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "flex": null,
+          "style": "wrapper-recovery"
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "style": "recovery-form",
+              "parseInput": {
+                "to": {
+                  "accesskey": "accesskey"
+                }
+              },
+              "schemaValidation": [
+                {
+                  "id": "accesskey",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "required",
+                      "params": ["Se requiere el código de acceso"]
+                    },
+                    {
+                      "type": "min",
+                      "params": [
+                        6,
+                        "El código de acceso debe contener almenos 6 dígitos"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Ingresa el código que se envió a tu e-mail",
+                  "style": "signin-title"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Te enviamos un código a tu e-mail para que puedas ingresar a tu cuenta",
+                  "style": "signin-text"
+                }
+              },
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "context": "useLocalCustomerData",
+                  "style": "signin-text",
+                  "text": "{StateMachine.context.user.email}"
+                }
+              },
+              {
+                "componentName": "store-form.input",
+                "props": {
+                  "name": "accesskey",
+                  "variant": "otp-code",
+                  "style": "form-input-otp"
+                }
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "flex": 1,
+                  "style": "signup-wrapper-grid-otp"
+                },
+                "children": [
+                  {
+                    "componentName": "store-form.submit",
+                    "props": {
+                      "buttonText": "Verificar código",
+                      "style": "signin-form-submit"
+                    }
+                  },
+                  {
+                    "componentName": "resend-otp-code",
+                    "props": {
+                      "context": "useStartResendAccessKey",
+                      "style": "resend-otp-code"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.home": {
+    "importContext": ["useLocalCustomerData", "useSearch", "useTopSearches"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "mode": "scroll-view"
+        },
+        "children": [
+          {
+            "componentName": "grid",
+            "props": {
+              "container": true,
+              "style": "scroll-view-home"
+            },
+            "children": [
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "style": "header-container"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "header-logo-wrapper"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "LogoHeader"
+                        }
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row",
+                          "justifyContent": "flex-end"
+                        },
+                        "children": [
+                          {
+                            "componentName": "store-icons",
+                            "props": {
+                              "name": "LocationIcon"
+                            }
+                          },
+                          {
+                            "componentName": "store-icons",
+                            "props": {
+                              "name": "BagIcon",
+                              "style": "header-bagicon"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "search-input",
+                    "props": {
+                      "context": "useTopSearches",
+                      "text": "¿Buscar en La Rebaja?",
+                      "redirectTo": "/search/?term={term}",
+                      "style": "input-search"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "container-location-text"
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "rich-text",
+                            "props": {
+                              "text": "Ubicación:",
+                              "style": "title-header-location-text"
+                            }
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "text": " Calle 13, Cra 2, BOGOTÁ, D.C.",
+                              "style": "header-location-text"
+                            }
+                          }
+                        ]
+                      },
+
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight",
+                          "style": "icon-arrow-right"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "style": "welcome-message"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "context": "useLocalCustomerData",
+                      "text": "¡Hola {StateMachine.context.user.firstName}!",
+                      "style": "welcome-message-name"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "children": [
+                          {
+                            "componentName": "rich-text",
+                            "props": {
+                              "text": "Por convenio de clientes empresariales tienes un 12% de descuento en tus compras. ",
+                              "style": "welcome-message-text"
+                            }
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/home",
+                              "text": "Aplican TyC",
+                              "style": "welcome-message-link"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "style": "grid-brands"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "style": "button-brands"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "ENCUENTRA NUESTRAS ",
+                          "style": "button-brands-text-one"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": " MARCAS EXCLUSIVAS",
+                          "style": "button-brands-text-two"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "carousel",
+                "props": {
+                  "autoplay": true,
+                  "loop": true,
+                  "autoplayInterval": 5000,
+                  "items": [
+                    {
+                      "imgUrl": "https://copservirtest.vteximg.com.br/arquivos/banner_slide_home_one.png"
+                    },
+                    {
+                      "imgUrl": "https://copservirtest.vteximg.com.br/arquivos/banner_slide_home_one.png"
+                    },
+                    {
+                      "imgUrl": "https://copservirtest.vteximg.com.br/arquivos/banner_slide_home_one.png"
+                    }
+                  ]
+                }
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "componentName": "showcase",
+                    "props": {
+                      "superShowcase": false
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true
+                        },
+                        "children": [
+                          {
+                            "componentName": "grid",
+                            "props": {
+                              "container": true,
+                              "direction": "row"
+                            },
+                            "children": [
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/WmJFZpG.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Farmacia",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/1m2nrF4.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Maternidad y Bebes",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://copservirtest.vteximg.com.br/arquivos/showcase_one.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Alimentos y Bebidas",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "grid",
+                            "props": {
+                              "container": true,
+                              "direction": "row"
+                            },
+                            "children": [
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/llYSDeU.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Belleza",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/0qgMyjb.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Cuídate en Casa",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/home",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/EpD2obW.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Para el Hogar",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "grid",
+                            "props": {
+                              "container": true,
+                              "direction": "row"
+                            },
+                            "children": [
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/auth",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/54U7MOs.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Dermo-cosmética",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/auth",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/vAlpHqg.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Cuidado y Aseo Personal",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "componentName": "link",
+                                "props": {
+                                  "href": "/auth",
+                                  "style": "category-section-item"
+                                },
+                                "children": [
+                                  {
+                                    "componentName": "image",
+                                    "props": {
+                                      "width": 67,
+                                      "height": 67,
+                                      "resizeMode": "contain",
+                                      "uri": "https://i.imgur.com/1qFkUgI.png"
+                                    }
+                                  },
+                                  {
+                                    "componentName": "rich-text",
+                                    "props": {
+                                      "text": "Ver Mas",
+                                      "style": "category-section-text"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "carousel",
+                "props": {
+                  "autoplay": true,
+                  "loop": true,
+                  "autoplayInterval": 5000
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one"
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "alignItems": "center",
+                          "style": "banner-section-one-image"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 350,
+                              "height": 200,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "alignItems": "center",
+                          "direction": "row",
+                          "style": "banner-section-one-images"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 180,
+                              "height": 180,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_2.png"
+                            }
+                          },
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 180,
+                              "height": 180,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_3.png"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one"
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "alignItems": "center",
+                          "direction": "row",
+                          "style": "banner-section-one-images"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 180,
+                              "height": 180,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_2.png"
+                            }
+                          },
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 180,
+                              "height": 180,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_3.png"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "alignItems": "center",
+                          "style": "banner-section-one-image"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 350,
+                              "height": 200,
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "mode": "scroll-view",
+                  "horizontal": true,
+                  "style": "collection-grid-scroll-view"
+                },
+                "children": [
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Súper Descuentos",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Ofertas",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Más Vendidos",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "product-list",
+                "props": {
+                  "numColumns": 1,
+                  "horizontal": true,
+                  "department": "drogueria",
+                  "category": "dolor-e-inflamacion",
+
+                  "maxCharts": 18,
+                  "imgProps": {
+                    "width": 180,
+                    "height": 180
+                  },
+                  "style": "product-list-collection"
+                }
+              },
+              {
+                "componentName": "carousel",
+                "props": {
+                  "autoplay": false,
+                  "loop": true,
+                  "autoplayInterval": 5000
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_4.png"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "carousel",
+                "props": {
+                  "autoplay": false,
+                  "loop": true,
+                  "autoplayInterval": 5000
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "horizontal": true,
+                      "justifyContent": "center",
+                      "direction": "row"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 180,
+                          "height": 180,
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_2.png"
+                        }
+                      },
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 180,
+                          "height": 180,
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_3.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "carousel",
+                "props": {
+                  "autoplay": false,
+                  "loop": true,
+                  "autoplayInterval": 5000
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Descuentoshogar_4.png"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "alignItems": "center",
+                      "style": "banner-section-one-image"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 350,
+                          "height": 200,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Bannerdescuentoslopido_1.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "mode": "scroll-view",
+                  "horizontal": true,
+                  "style": "collection-grid-scroll-view"
+                },
+                "children": [
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Súper Descuentos",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Ofertas",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "link",
+                    "props": {
+                      "href": "/home",
+                      "style": "frame-link"
+                    },
+                    "children": [
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Más Vendidos",
+                          "style": "frame-link-text"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "product-list",
+                "props": {
+                  "numColumns": 1,
+                  "horizontal": true,
+                  "department": "drogueria",
+                  "category": "dolor-e-inflamacion",
+
+                  "maxCharts": 18,
+                  "imgProps": {
+                    "width": 180,
+                    "height": 180
+                  },
+                  "style": "product-list-collection"
+                }
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Marcas Destacadas",
+                      "style": "collection-grid-scroll-view-text"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "mode": "scroll-view",
+                      "horizontal": true,
+                      "style": "collection-grid-scroll-view"
+                    },
+                    "children": [
+                      {
+                        "componentName": "link",
+                        "props": {
+                          "href": "/auth",
+                          "style": "collection-grid-item"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 140,
+                              "height": 95,
+                              "resizeMode": "contain",
+                              "uri": "https://copservirtest.vteximg.com.br/arquivos/image 79.png"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "link",
+                        "props": {
+                          "href": "/auth",
+                          "style": "collection-grid-item"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 140,
+                              "height": 95,
+                              "resizeMode": "contain",
+                              "uri": "https://i.imgur.com/AduLKij.png"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "link",
+                        "props": {
+                          "href": "/auth",
+                          "style": "collection-grid-item"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 140,
+                              "height": 95,
+                              "resizeMode": "contain",
+                              "uri": "https://i.imgur.com/kiS1TV4.png"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "link",
+                        "props": {
+                          "href": "/auth",
+                          "style": "collection-grid-item"
+                        },
+                        "children": [
+                          {
+                            "componentName": "image",
+                            "props": {
+                              "width": 140,
+                              "height": 95,
+                              "resizeMode": "contain",
+                              "uri": "https://i.imgur.com/NAtreul.png"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Tiendas",
+                      "style": "collection-grid-scroll-view-text"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "mode": "scroll-view",
+                      "horizontal": true,
+                      "style": "collection-grid-scroll-view"
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {"container": true},
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://copservirtest.vteximg.com.br/arquivos/Tiendasoficiales1.png"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://copservirtest.vteximg.com.br/arquivos/Tiendasoficiales2.png"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {"container": true},
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/lw3Iuzd.png"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/Zko3zfv.png"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {"container": true},
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://copservirtest.vteximg.com.br/arquivos/Tiendasoficiales1.png"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://copservirtest.vteximg.com.br/arquivos/Tiendasoficiales2.png"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {"container": true},
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/lw3Iuzd.png"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "collection-grid-item-tienda"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 160,
+                                  "height": 175,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/Zko3zfv.png"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.account": {
+    "importContext": ["useLocalCustomerData", "useSearch"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "mode": "scroll-view",
+          "style": "container-account-wrapper"
+        },
+        "children": [
+          {
+            "componentName": "rich-text",
+            "props": {
+              "context": "useLocalCustomerData",
+              "text": "¡Hola {StateMachine.context.user.firstName}!",
+              "style": "title-account"
+            }
+          },
+          {
+            "componentName": "grid",
+            "props": {
+              "container": true,
+              "style": "container-account"
+            },
+            "children": [
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccount",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Perfil",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                          
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountAdress",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Direcciones",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },                 
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountOrders",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Pedidos",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },           
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountClients",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Relaciones con los clientes",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountInformation",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Información de interés",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountCompany",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Nuestra compañía",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "link",
+                "props": {
+                  "href": "/home"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "account-content"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconMyAccountContact",
+                          "stroke": "red"
+                        }
+                      },
+                      {
+                        "componentName": "rich-text",
+                        "props": {
+                          "text": "Contáctenos",
+                          "style": "account-text"
+                        }
+                      },
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "alignItems": "center",
+                  "style": "account-logout"
+                },
+                "children": [
+                  {
+                    "componentName": "logout",
+                    "props": {
+                      "context": "useLogout",
+                      "redirectUrl": "/walkthrough",
+                      "style": "logout"
+                    }
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Cooperativa Multiactiva de Servicios Copservir Ltda",
+                      "style": "account-text-coop"
+                    }
+                  },
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "NIT. 830.011.670-3",
+                      "style": "account-text-coop"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row"
+                    },
+                    "children": [
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 150,
+                          "height": 30,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/image 13.png"
+                        }
+                      },
+                      {
+                        "componentName": "image",
+                        "props": {
+                          "width": 150,
+                          "height": 30,
+                          "resizeMode": "contain",
+                          "uri": "https://copservirtest.vteximg.com.br/arquivos/Mask Group.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.category": {
+    "importContext": ["useLocalCustomerData", "useSearch", "useTopSearches"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "mode": "scroll-view"
+        },
+        "children": [
+          {
+            "componentName": "grid",
+            "props": {
+              "container": true,
+              "style": "scroll-view-home"
+            },
+            "children": [
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "style": "header-container"
+                },
+                "children": [
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "header-logo-wrapper"
+                    },
+                    "children": [
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "LogoHeader"
+                        }
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row",
+                          "justifyContent": "flex-end"
+                        },
+                        "children": [
+                          {
+                            "componentName": "store-icons",
+                            "props": {
+                              "name": "LocationIcon"
+                            }
+                          },
+                          {
+                            "componentName": "store-icons",
+                            "props": {
+                              "name": "BagIcon",
+                              "style": "header-bagicon"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "search-input",
+                    "props": {
+                      "context": "useTopSearches",
+                      "redirectTo": "/search/?term={term}",
+                      "style": "input-search"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true,
+                      "direction": "row",
+                      "style": "container-location-text"
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "rich-text",
+                            "props": {
+                              "text": "Ubicación:",
+                              "style": "title-header-location-text"
+                            }
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "text": " Calle 13, Cra 2, BOGOTÁ, D.C.",
+                              "style": "header-location-text"
+                            }
+                          }
+                        ]
+                      },
+
+                      {
+                        "componentName": "store-icons",
+                        "props": {
+                          "name": "IconArrowRight",
+                          "style": "icon-arrow-right"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "componentName": "grid",
+                "props": {
+                  "container": true,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "componentName": "rich-text",
+                    "props": {
+                      "text": "Categorías",
+                      "style": "title-category"
+                    }
+                  },
+                  {
+                    "componentName": "grid",
+                    "props": {
+                      "container": true
+                    },
+                    "children": [
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/WmJFZpG.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Farmacia",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/1m2nrF4.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Maternidad y Bebes",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://copservirtest.vteximg.com.br/arquivos/showcase_one.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Alimentos y Bebidas",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/llYSDeU.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Belleza",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/0qgMyjb.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Cuídate en Casa",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/EpD2obW.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Para el Hogar",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/54U7MOs.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Dermo-cosmética",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/vAlpHqg.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Cuidado y Aseo Personal",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/nkDMGiU.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Naturales y Homeopáticos",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "componentName": "grid",
+                        "props": {
+                          "container": true,
+                          "direction": "row"
+                        },
+                        "children": [
+                          {
+                            "componentName": "link",
+                            "props": {
+                              "href": "/auth",
+                              "style": "category-section-item"
+                            },
+                            "children": [
+                              {
+                                "componentName": "image",
+                                "props": {
+                                  "width": 67,
+                                  "height": 67,
+                                  "resizeMode": "contain",
+                                  "uri": "https://i.imgur.com/2YmydvC.png"
+                                }
+                              },
+                              {
+                                "componentName": "rich-text",
+                                "props": {
+                                  "text": "Dermo-cosmética",
+                                  "style": "category-section-text"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "store.product": {
+    "importContext": [
+      "useProduct","useProductRecommendations"
+    ],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true,
+          "mode": "scroll-view"
+        },
+        "children":[
+          {
+        
+            "componentName": "product-detail",
+            "props": {
+              "relatedProducts":true,
+              "textAddtoCart":"Comprar",
+              "productCard":{
+                "imgProps":{
+                  "width": 100,
+                  "height": 100
+                },
+                "variant":"simple"
+              },
+              
+              "style":"product-detail"
+            }
+          }
+        ]
+      }
+      
+    ]
+  },
+  "store.search": {
+    "importContext": ["useSearch", "useTopSearches"],
+    "children": [
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true,
+          "style": "header-container-search"
+        },
+        "children": [
+          {
+            "componentName": "search-input",
+            "props": {
+              "context": "useTopSearches",
+              "text": "¿Buscar en La Rebaja?",
+              "redirectTo": "/search/?term={term}",
+              "style": "input-search-results"
+            }
+          },
+          {
+            "componentName": "product-list",
+            "props": {
+              "numColumns": 1,
+              "imgProps": {
+                "width": 100,
+                "height": 100
+              },
+              "textAddtoCart": "+",
+              "variant": "default",
+              "style": "product-list"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

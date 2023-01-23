@@ -1,0 +1,1030 @@
+{
+    "store.signin": {
+        "importContext": [
+            "useLogin",
+            "useCustomer"
+        ],
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useLogin",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "input": {
+                                "email": "email",
+                                "password": "password"
+                            }
+                        }
+                    }
+                },
+                "children": [
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "email"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "password"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Iniciar Sesion"
+                        }
+                    }
+                ]
+            },
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    }
+                },
+                "children": [
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "email"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Enviar codigo OTP"
+                        }
+                    }
+                ]
+            },
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartValidateAccessKey",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "accesskey": "accesskey"
+                        }
+                    }
+                },
+                "children": [
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "accesskey"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Validar codigo OTP"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signin.with-email": {
+        "importContext": [
+            "useStartAuthentication",
+            "useSendAccessKey"
+        ],
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onChange",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    },
+                    "schemaValidation": [
+                        {
+                            "id": "email",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "El correo electrónico es requerido"
+                                    ]
+                                },
+                                {
+                                    "type": "email",
+                                    "params": [
+                                        "Debe ser un email válido"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "style": "signin-email-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Ingresa tu correo",
+                            "style": "signin-title"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Escribe tu e-mail para continuar",
+                            "style": "signin-description"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "email",
+                            "placeholder": "Escribe tu e-mail",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signin.with-email-and-password": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onChange",
+                    "parseInput": {
+                        "to": {
+                            "password": "password"
+                        }
+                    },
+                    "schemaValidation": [
+                        {
+                            "id": "password",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "min",
+                                    "params": [
+                                        8,
+                                        "La contraseña no puede ser menor a 8 caracteres"
+                                    ]
+                                },
+                                {
+                                    "type": "max",
+                                    "params": [
+                                        50,
+                                        "La contraseña no puede ser mayor a 50 caracteres"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^.*[0-9].*$/",
+                                        "Debe contener almenos un numero"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^.*[a-z].*$/",
+                                        "Debe contener almenos una letra minuscula"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^.*[A-Z].*$/",
+                                        "Debe contener almenos una letra mayuscula"
+                                    ]
+                                },
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "La contraseña es requerida"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "style": "signin-email-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Solo falta tu clave",
+                            "style": "signin-title"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Escribe tu contraseña para entrar",
+                            "style": "signin-description"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "password",
+                            "placeholder": "Contraseña",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.otp-code-validate": {
+        "importContext": [
+            "useStartValidateAccessKey",
+            "useValidateAccessKey"
+        ],
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartValidateAccessKey",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "accesskey": "accesskey"
+                        }
+                    },
+                    "style": "signin-email-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Ingresa el código que enviamos al {email}",
+                            "style": "signin-title"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "accesskey",
+                            "variant": "otp-code",
+                            "placeholder": "Contraseña",
+                            "style": "form-input-otp"
+                        }
+                    },
+                    {
+                        "componentName": "resend-otp-code",
+                        "props": {
+                            "style": "resend-otp-code"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Verificar",
+                            "style": "submit-button-without-flex"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_first_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onChange",
+                    "parseInput": {
+                        "to": {
+                            "firstName": "firstName"
+                        }
+                    },
+                    "schemaValidation": [
+                        {
+                            "id": "firstName",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "Este campo es requerido"
+                                    ]
+                                },
+                                {
+                                    "type": "max",
+                                    "params": [
+                                        32,
+                                        "El nombre no puede ser mayor a 50 caracteres"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ]+$/",
+                                        "El nombre solo puede contener letras"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "lastName",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "Este campo es requerido"
+                                    ]
+                                },
+                                {
+                                    "type": "max",
+                                    "params": [
+                                        32,
+                                        "El apellido no puede ser mayor a 50 caracteres"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ]+$/",
+                                        "El apellido solo puede contener letras"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "email",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "El correo electrónico es requerido"
+                                    ]
+                                },
+                                {
+                                    "type": "email",
+                                    "params": [
+                                        "Debe ser un email válido"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "phone",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "Este campo es requerido"
+                                    ]
+                                },
+                                {
+                                    "type": "matches",
+                                    "params": [
+                                        "/^[0-9]+$/",
+                                        "Solo pueden ser numeros"
+                                    ]
+                                },
+                                {
+                                    "type": "min",
+                                    "params": [
+                                        10,
+                                        "El celular no puede ser menor a 10 caracteres"
+                                    ]
+                                },
+                                {
+                                    "type": "max",
+                                    "params": [
+                                        10,
+                                        "El celular no puede ser mayor a 10 caracteres"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Datos de contacto",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Ingresa tu nombre, apellido, correo y teléfono celular",
+                            "style": "text-description"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "firstName",
+                            "placeholder": "Primer nombre*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "lastName",
+                            "placeholder": "Primer apellido*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "email",
+                            "placeholder": "Correo electrónico*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "phone",
+                            "variant": "phone",
+                            "style": "form-input-phone"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_second_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    },
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Ingresa tu ubicación actual",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "🇨🇴",
+                            "style": "flag-emoji"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.select",
+                        "props": {
+                            "name": "department",
+                            "placeholder": "Departamento",
+                            "style": "form-select"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.select",
+                        "props": {
+                            "name": "city",
+                            "placeholder": "Ciudad",
+                            "style": "form-select"
+                        }
+                    },
+                    {
+                        "componentName": "divider",
+                        "props": {
+                            "style": "divider"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_third_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    },
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "¿Con cuál de las siguientes opciones te identificas?",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "options-list",
+                        "props": {
+                            "list": [
+                                {
+                                    "title": "Academia de belleza",
+                                    "description": "Tengo una academia de belleza",
+                                    "value": "academia_de_belleza"
+                                },
+                                {
+                                    "title": "Barbería",
+                                    "description": "Trabajo con manos y pies",
+                                    "value": "barberia"
+                                },
+                                {
+                                    "title": "Miscelanea",
+                                    "description": "Trabajo con manos y pies",
+                                    "value": "miscelanea"
+                                },
+                                {
+                                    "title": "Peluquería",
+                                    "description": "Tengo una peluquería",
+                                    "value": "peluqueria"
+                                },
+                                {
+                                    "title": "Profesional independiente",
+                                    "description": "Trabajo por mi cuenta",
+                                    "value": "profesional_independiente"
+                                },
+                                {
+                                    "title": "Spa",
+                                    "description": "Tengo un spa",
+                                    "value": "spa"
+                                },
+                                {
+                                    "title": "Tienda de barrio",
+                                    "description": "Tengo una Tienda de barrio",
+                                    "value": "tienda_de_barrio"
+                                }
+                            ],
+                            "style": "options-list"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_fourth_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "businessName": "businessName"
+                        }
+                    },
+                    "schemaValidation": [
+                        {
+                            "id": "businessName",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "El nombre del negocio es requerido"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "id",
+                            "type": "text",
+                            "validationType": "string",
+                            "validations": [
+                                {
+                                    "type": "required",
+                                    "params": [
+                                        "El numero de identificación es requerido"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Datos de tu negocio",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "businessName",
+                            "placeholder": "Nombre de tu negocio*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "id",
+                            "placeholder": "Numero de identificación*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Necesitamos una autenticación de tu negocio ¿Cómo prefieres hacerlo?*",
+                            "style": "text-description"
+                        }
+                    },
+                    {
+                        "componentName": "options-list",
+                        "props": {
+                            "list": [
+                                {
+                                    "title": "Subir un soporte",
+                                    "description": "NIT,  RUT, fotos facturas, fotos del negocio.",
+                                    "value": "soporte"
+                                },
+                                {
+                                    "title": "Ser contactado",
+                                    "description": "Recibirás un mensaje de nuestro equipo",
+                                    "value": "contacto"
+                                }
+                            ],
+                            "style": "options-list"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_fifth_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    },
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "¿Cómo llegaste a Morado?",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Selecciona por qué medio llegaste a Morado App",
+                            "style": "text-description-flow_fifth_step"
+                        }
+                    },
+                    {
+                        "componentName": "options-list",
+                        "props": {
+                            "list": [
+                                {
+                                    "title": "Asesora(o)",
+                                    "description": "Fui contactado por alguien de Morado",
+                                    "value": "asesor"
+                                },
+                                {
+                                    "title": "Instagram",
+                                    "value": "instagram"
+                                },
+                                {
+                                    "title": "TikTok",
+                                    "value": "tiktok"
+                                },
+                                {
+                                    "title": "Referido",
+                                    "description": "Alguien me recomendo Morado",
+                                    "value": "referido"
+                                },
+                                {
+                                    "title": "Evento",
+                                    "value": "evento"
+                                },
+                                {
+                                    "title": "Otros",
+                                    "value": "otros"
+                                }
+                            ],
+                            "style": "options-list"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.signup.flow_sixth_step": {
+        "children": [
+            {
+                "componentName": "store-form",
+                "props": {
+                    "context": "useStartAuthentication",
+                    "mode": "onSubmit",
+                    "parseInput": {
+                        "to": {
+                            "email": "email"
+                        }
+                    },
+                    "style": "signup-wrapper"
+                },
+                "children": [
+                    {
+                        "componentName": "rich-text",
+                        "props": {
+                            "text": "Datos de seguridad",
+                            "style": "text-title"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "password",
+                            "placeholder": "Contraseña*",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.input",
+                        "props": {
+                            "name": "confirmPassword",
+                            "placeholder": "Confirma tu contraseña",
+                            "style": "form-input-default"
+                        }
+                    },
+                    {
+                        "componentName": "password-rules",
+                        "props": {}
+                    },
+                    {
+                        "componentName": "options-list",
+                        "props": {
+                            "multi": true,
+                            "list": [
+                                {
+                                    "title": "He leído y acepto los términos y condiciones",
+                                    "value": "accept_term_and_conditions"
+                                },
+                                {
+                                    "title": "He leído y acepto el tratamiento de datos",
+                                    "value": "accept_data_term"
+                                }
+                            ],
+                            "style": "terms-and-conditions"
+                        }
+                    },
+                    {
+                        "componentName": "store-form.submit",
+                        "props": {
+                            "buttonText": "Continuar",
+                            "style": "submit-button"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "store.social-sign": {
+        "children": [
+            {
+                "componentName": "social-button",
+                "props": {
+                    "resetAndRedirectTo": {
+                        "index": 0,
+                        "routes": [
+                            {
+                                "name": "main"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "store.home": {
+        "importContext": [
+            "useSearch"
+        ],
+        "children": [
+            {
+                "componentName": "product-list",
+                "props": {
+                    "numColumns": 2
+                }
+            }
+        ]
+    },
+    "store.product": {
+        "children": [
+            {
+                "componentName": "product-detail",
+                "props": {
+                    "relatedProducts": true
+                }
+            }
+        ]
+    },
+    "store.cart": {
+        "children": [
+            {
+                "componentName": "cart-list",
+                "props": {
+                    "numColumns": 1
+                }
+            }
+        ]
+    },
+    "store.walkthrough": {
+        "children": [
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Explorar",
+                    "href": "/home"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Carrito",
+                    "href": "/cart"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Iniciar Sesion",
+                    "href": "/auth/signin"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Iniciar Sesion(Email)",
+                    "href": "/auth/signin/classic"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Iniciar Sesion(Email - Password)",
+                    "href": "/auth/signin/classic/password"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Iniciar Sesion(Validate Code)",
+                    "href": "/auth/otp/validate"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Iniciar con Redes Sociales",
+                    "href": "/auth/social-sign"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (First Step)",
+                    "href": "/auth/signup"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (Second Step)",
+                    "href": "/auth/signup/current_location"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (Third Step)",
+                    "href": "/auth/signup/preferences"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (Fourth Step)",
+                    "href": "/auth/signup/business_data"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (Fifth Step)",
+                    "href": "/auth/signup/business_data/source"
+                }
+            },
+            {
+                "componentName": "link",
+                "props": {
+                    "text": "Registrarse (Sixth Step)",
+                    "href": "/auth/signup/security"
+                }
+            }
+        ]
+    }
+}

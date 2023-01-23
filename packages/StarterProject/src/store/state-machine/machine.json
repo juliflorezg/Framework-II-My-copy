@@ -1,0 +1,73 @@
+{
+  "authentication": {
+    "config": {
+      "id": "authentication",
+      "initial": "unauthorized",
+      "context": {
+        "newLink": null,
+        "user": null,
+        "errorMessage": null
+      },
+      "states": {
+        "unauthorized": {
+          "on": {
+            "LOGIN": {
+              "target": "loading",
+              "actions": ["onLoading"]
+            },
+            "REDIRECT_TO_DEFAULT_PAGE": {
+              "actions": ["redirectDefault"]
+            }
+          }
+        },
+        "loading": {
+          "on": {
+            "SET_USER_DATA": {
+              "actions": ["setUserData"]
+            },
+            "LOGIN_BUSINESS_DATA": {
+              "actions": ["setBusinessData"]
+            },
+            "LOGIN_UTM": {
+              "actions": ["setUTM"]
+            },
+            "LOGIN_SUCCESS": {
+              "target": "authorized",
+              "actions": ["onSuccess"]
+            },
+            "LOGIN_ERROR": {
+              "target": "unauthorized",
+              "actions": ["onError"]
+            }
+          }
+        },
+        "authorized": {
+          "on": {
+            "SET_USER_DATA": {
+              "actions": ["setUserData"]
+            },
+            "LOGIN_BUSINESS_DATA": {
+              "actions": ["setBusinessData"]
+            },
+            "LOGIN_UTM": {
+              "actions": ["setUTM"]
+            },
+            "LOGOUT": {
+              "target": "unauthorized",
+              "actions": ["logout"]
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "actions": [
+        "setUTM",
+        "setBusinessData",
+        "onLoading",
+        "onSuccess",
+        "onError"
+      ]
+    }
+  }
+}

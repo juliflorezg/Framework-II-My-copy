@@ -1,0 +1,116 @@
+{
+  "store.walkthrough": {
+    "children": [
+      {
+        "componentName": "image",
+        "props": {
+          "type": "background",
+          "uri": "https://i.imgur.com/mr3tndy.png",
+          "resizeMode": "stretch"
+        },
+        "children": [
+          {
+            "componentName": "walkthrough-view",
+            "props": {
+              "continue": true,
+              "signup": true,
+              "google": true,
+              "facebook": true,
+              "continueUrl": "/auth/signin/classic/password/first",
+              "googleUrl": "/walkthrough",
+              "facebookUrl": "/walkthrough",
+              "signupUrl": "/auth/1step"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "store.first-step": {
+    "children": [
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "Please fill in the following information to create your account",
+          "style": "singUp-form-description"
+        }
+      },
+      {
+        "componentName": "link",
+        "props": {
+          "text": "FANCY BUTTON",
+          "href": "/auth/2step",
+          "style": "detail-link"
+        }
+      }
+    ]
+  },
+
+  "store.second-step": {
+    "children": [
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "I am in the second step",
+          "style": "singUp-form-description"
+        }
+      }
+    ]
+  },
+
+  "store.signup-datos-contacto": {
+    "children": [
+      "",
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true
+        },
+        "children": [
+          {
+            "componentName": "store-form",
+            "props": {
+              "scrollView": false,
+              // "schemaValidation": {},
+              "schemaValidation": [
+                {
+                  "id": "email",
+                  "type": "text",
+                  "validationType": "string",
+                  "validations": [
+                    {
+                      "type": "required",
+                      "params": ["El correo electronico es requerido"]
+                    },
+                    {
+                      "type": "email",
+                      "params": ["Debe ser un correo valido"]
+                    }
+                  ]
+                }
+              ],
+              "mode": "onChange",
+              "revalidateMode": "onChange",
+              "style": "signup-datos-contacto"
+            },
+            "children": [
+              {
+                "componentName": "rich-text",
+                "props": {
+                  "text": "Datos de contacto"
+                }
+              }
+            ]
+          },
+          {
+            "componentName": "rich-text",
+            "props": {
+              "text": "Datos de contacto"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

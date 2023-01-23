@@ -1,0 +1,405 @@
+{
+  "rootType": "Stack",
+  "initialRouteName": "walkthrough",
+  "prefixes": ["https://rnframework.com", "rnframework://"],
+  "screens": {
+    "walkthrough": {
+      "path": "walkthrough",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "title": "Walkthrough",
+        "headerShown": false
+      },
+      "type": "Component"
+    },
+    "auth": {
+      "type": "Stack",
+      "initialRouteName": "signin",
+      "unMountIfIsAuthenticated": true,
+      "options": {
+        "headerShown": false
+      },
+      "path": "auth",
+      "screens": {
+        "signin.with-email": {
+          "path": "signin/classic",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "signin.with-email-and-password": {
+          "path": "signin/classic/password/first",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "signin.with-email-and-password-second-step": {
+          "path": "signin/classic/password/second",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "signin.with-otp": {
+          "path": "signin/otp",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "password.recovery-otp": {
+          "path": "password/recovery/otp",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "signin.otp-code-validate": {
+          "path": "signin/otp/validate",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "password.otp-code-validate": {
+          "path": "password/recovery/otp/validate",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "otp-code-validate": {
+          "path": "otp/validate",
+          "options": {
+            "headerShown": true,
+            "title": "",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {}
+          },
+          "type": "Component"
+        },
+        "signup.flow_first_step": {
+          "path": "signup",
+          "options": {
+            "headerShown": true,
+            "title": "Datos de contacto",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "signup.flow_second_step": {
+          "path": "signup/current_location",
+          "options": {
+            "headerShown": true,
+            "title": "Ubicación",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "signup.flow_third_step": {
+          "path": "signup/preferences",
+          "options": {
+            "headerShown": true,
+            "title": "Preferencias",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "signup.flow_fourth_step": {
+          "path": "signup/business_data",
+          "options": {
+            "headerShown": true,
+            "title": "Datos del negocio",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "signup.flow_fifth_step": {
+          "path": "signup/business_data/source",
+          "options": {
+            "headerShown": true,
+            "title": "Datos del negocio",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "signup.flow_sixth_step": {
+          "path": "signup/security",
+          "options": {
+            "headerShown": true,
+            "title": "Datos de seguridad",
+            "headerTitleAlign": "center",
+            "headerShadowVisible": false,
+            "headerStyle": {
+              "backgroundColor": "#fff"
+            },
+            "headerTintColor": "#390052",
+            "headerTitleStyle": {
+              "fontFamily": "Poppins-SemiBold",
+              "fontSize": 16
+            }
+          },
+          "type": "Component"
+        },
+        "update-profile": {
+          "path": "update-profile",
+          "options": {
+            "title": "Actualizar perfil"
+          },
+          "type": "Component"
+        },
+        "validate-email": {
+          "path": "validate-email",
+          "options": {
+            "title": "Validar Correo Electrónico"
+          },
+          "type": "Component"
+        }
+      }
+    },
+    "main": {
+      "type": "Tab",
+      "options": {
+        "headerShown": false
+      },
+      "screens": {
+        "home": {
+          "path": "home",
+          "options": {
+            "title": "Home",
+            "tabBarIconName": "Home",
+            "tabBarActiveTintColor": "#AA26C6",
+            "tabBarInactiveTintColor": "#390052"
+          },
+          "type": "Component"
+        },
+        "category-stack": {
+          "path": "category",
+          "options": {
+            "title": "Productos",
+            "tabBarIconName": "Categories",
+            "tabBarActiveTintColor": "#AA26C6",
+            "tabBarInactiveTintColor": "#390052"
+          },
+          "type": "Stack",
+          "screens":{
+            "category": {
+              "path": "category",
+              "options": {
+                "title": "Productos"
+            
+              },
+              "type": "Component"
+            },
+            "product-list": {
+              "path": "product-list/:department?/:category?/:subCategory?/:brand?",
+              "options": {
+                "title": "Category Page"
+              },
+              "type": "Component"
+            }
+          }
+        },
+        "offers": {
+          "path": "offers",
+          "options": {
+            "title": "Ofertas",
+            "tabBarIconName": "Offers",
+            "tabBarActiveTintColor": "#AA26C6",
+            "tabBarInactiveTintColor": "#390052"
+          },
+          "type": "Component"
+        },
+        "wishlist": {
+          "path": "wishlist",
+          "options": {
+            "title": "Favoritos",
+            "preventDefault": true,
+            "customComponent":"tabbar-favorites-custom",
+            "tabBarActiveTintColor": "#AA26C6",
+            "tabBarInactiveTintColor": "#390052"
+          },
+          "type": "Component"
+        },
+        "menu": {
+          "path": "menu",
+          "options": {
+            "preventDefault": true,
+            "customComponent":"tabbar-menu-custom",
+            "title": "Menu",
+            "tabBarActiveTintColor": "#AA26C6",
+            "tabBarInactiveTintColor": "#390052"
+          },
+          "type": "Component"
+        }
+      }
+    },
+    "my-account": {
+      "path": "my-account",
+      "options": {
+        "title": "Mi cuenta"
+      },
+      "type": "Component"
+    },
+    "addresses": {
+      "path": "addresses",
+      "options": {
+        "title": "Mis Direcciones",
+        "headerRightIconName": "NavSearchIcon",
+        "headerRightLogic": "useSearchAddressRedirect"
+      },
+      "type": "Component"
+    },
+    "product": {
+      "path": "product/:slug?/p",
+      "options": {
+        "title": "Product"
+      },
+      "type": "Component"
+    },
+    "search-location":{
+      "path": "search/location",
+      "options": {
+        "headerShown": false
+      },
+      "type": "Component"
+    },
+    "search": {
+      "path": "search/:department?/:category?/:subCategory?/:brand?",
+      "options": {
+        "title": "Resultados",
+        "headerStyle": {
+          "backgroundColor": "#fff"
+        },
+        "headerTintColor": "#390052",
+        "headerTitleStyle": {
+          "fontFamily": "Poppins-SemiBold",
+          "fontSize": 16
+        }
+      },
+      "type": "Component"
+    },
+    "cart": {
+      "path": "cart",
+      "options": {
+        "title": "Cart"
+      },
+      "type": "Component"
+    },
+    "tutorial": {
+      "path": "tutorial",
+      "options": {
+        "title": "Tutorial"
+      },
+      "type": "Component"
+    },
+    "help-center": {
+      "path": "help-center",
+      "options": {
+        "title": "Help Center"
+      },
+      "type": "Component"
+    }
+  
+  }
+}

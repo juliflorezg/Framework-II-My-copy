@@ -1,0 +1,2173 @@
+{
+  "styles.location-menu-text": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "lineHeight": 19,
+      "color": "#390052"
+    }
+  },
+  "styles.forgot-password": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}"
+    }
+  },
+  "styles.forgot-password-link": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "textDecorationLine": "underline",
+      "color": "#F96F88"
+    }
+  },
+  "styles.password-rules": {
+    "text": {
+      "fontFamily": "Poppins-Light"
+    }
+  },
+  "styles.header-logo-wrapper": {
+    "gridContainer": {
+      "marginBottom": "{spacing[2]}"
+    }
+  },
+  "styles.logout": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 16,
+      "color": "{palette.primary.main}"
+    }
+  },
+  "styles.from-morado": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "textAlign": "center"
+    }
+  },
+  "styles.link-content-wrapper": {
+    "gridContainer": {
+      "flex": null,
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "marginHorizontal": "{spacing[5]}",
+      "marginVertical": "{spacing[2]}"
+    }
+  },
+  "styles.link-content-wrapper-wborder": {
+    "gridContainer": {
+      "flex": null,
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "marginHorizontal": "{spacing[4]}",
+      "marginVertical": "{spacing[2]}",
+      "borderWidth": 1,
+      "borderRadius": 16,
+      "borderColor": "#DDDBDB",
+      "paddingHorizontal": "{spacing[3]}",
+      "paddingVertical": "{spacing[3]}"
+    }
+  },
+  "styles.arrow-wrapper": {
+    "gridContainer": {
+      "flex": null,
+      "backgroundColor": "{palette.primary.main}",
+      "width": 20,
+      "height": 20,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 30
+    }
+  },
+  "styles.title": {
+    "text": {
+      "fontSize": 24,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "marginLeft": 24,
+      "marginTop": 24
+    }
+  },
+  "styles.sub-title-2": {
+    "text": {
+      "fontSize": 16,
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}"
+    }
+  },
+  "styles.sub-title": {
+    "text": {
+      "fontSize": 16,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "marginLeft": 24,
+      "marginTop": 24
+    }
+  },
+  "styles.description": {
+    "text": {
+      "fontSize": 16,
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "marginLeft": 24
+    }
+  },
+  "styles.blank-wrapper": {
+    "gridContainer": {
+      "backgroundColor": "#fff"
+    }
+  },
+  "styles.info-banner-text-link": {
+    "text": {
+      "color": "{palette.tertiary.main}",
+      "fontFamily": "Poppins-SemiBold",
+      "textDecorationLine": "underline"
+    }
+  },
+  "styles.info-banner-text-bold": {
+    "text": {
+      "color": "#B3B3B3",
+      "fontSize": 16,
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+  "styles.info-banner-text": {
+    "text": {
+      "color": "#B3B3B3",
+      "fontFamily": "Poppins-Light"
+    }
+  },
+  "styles.promo-detail-button": {
+    "text": {
+      "backgroundColor": "{palette.primary.main}",
+      "color": "#fff",
+      "fontFamily": "Poppins-SemiBold",
+      "borderRadius": 16,
+      "textAlign": "center",
+      "width": 127,
+      "paddingVertical": 8
+    }
+  },
+  "styles.promo-description-wrapper": {
+    "gridContainer": {
+      "marginVertical": "{spacing[2]}",
+      "marginHorizontal": "{spacing[3]}"
+    }
+  },
+  "styles.promo-title": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "textDecorationLine": "underline",
+      "marginBottom": "{spacing[2]}"
+    }
+  },
+  "styles.promo-description": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "marginBottom": "{spacing[2]}"
+    }
+  },
+  "styles.promo-card": {
+    "gridContainer": {
+      "width": 300,
+      "overflow": "hidden",
+      "borderRadius": 16,
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "width": 0,
+        "height": 6
+      },
+      "shadowOpacity": 0.39,
+      "shadowRadius": 8.3,
+
+      "elevation": 13,
+      "backgroundColor": "#fff",
+      "marginBottom": "{spacing[4]}",
+      "marginLeft": "{spacing[3]}"
+    }
+  },
+  "styles.collection-grid-scroll-view": {
+    "gridContainer": {
+      "flex": null
+    }
+  },
+  "styles.category-grid-container": {
+    "gridContainer": {
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "marginVertical": "{spacing[3]}"
+    }
+  },
+  "styles.category-scroll-view": {
+    "gridContainer": {
+      "flex": 1
+    }
+  },
+  "styles.collection-grid-item": {
+    "container": {
+      "marginHorizontal": "{spacing[2]}",
+      "alignItems": "center",
+      "width": 80
+    }
+  },
+  "styles.plp-collection-text": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "{palette.primary.main}",
+      "textAlign": "center"
+    }
+  },
+  "styles.category-title": {
+    "text": {
+      "fontSize": 20,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "marginLeft": 24,
+      "marginTop": 24
+    }
+  },
+  "styles.category-subtitle-title": {
+    "text": {
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light",
+      "color": "#1A1919",
+      "marginLeft": 24,
+      "marginTop": 10
+    }
+  },
+  "styles.category-link": {
+    "text": {
+      "fontSize": 14,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.tertiary.main}",
+      "textDecorationLine": "underline",
+      "textAlign": "right",
+      "marginRight": 24,
+      "marginTop": 24
+    }
+  },
+  "styles.categories-wrapper": {
+    "gridContainer": {
+      "backgroundColor": "#fff"
+    }
+  },
+  "styles.collection-title-grid": {
+    "gridContainer": {
+      "flex": null,
+      "justifyContent": "space-between",
+      "alignItems": "center"
+    }
+  },
+  "styles.fake-input-search": {
+    "gridContainer": {
+      "flex": null,
+      "backgroundColor": "#F5F5F5",
+      "borderRadius": 16,
+      "height": 40,
+      "paddingHorizontal": 8,
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "marginTop": 32,
+      "shadowColor": "#000",
+      "borderWidth": 3,
+      "borderColor": "white",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+
+      "elevation": 5
+    }
+  },
+  "styles.input-search": {
+    "container": {
+      "flexDirection": "row",
+      "flex": null,
+      "backgroundColor": "#F5F5F5",
+      "borderRadius": 16,
+      "height": 40,
+      "paddingHorizontal": 8,
+      "justifyContent": "space-between",
+
+      "marginTop": 32,
+      "shadowColor": "#000",
+      "borderWidth": 3,
+      "borderColor": "white",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+
+      "elevation": 5
+    },
+    "textStyles": {
+      "color": "#c2c2c2",
+      "padding": "{spacing[2]}"
+    },
+    "searchIcon": {
+      "padding": "{spacing[2]}"
+    }
+  },
+  "styles.header-container": {
+    "gridContainer": {
+      "flex": null,
+      "backgroundColor": "#fff",
+      "height": 118,
+      "padding": 26
+    }
+  },
+
+  "styles.header-container-offers": {
+    "gridContainer": {
+      "flex": null,
+      "backgroundColor": "#fff",
+      "height": 118,
+      "paddingHorizontal": 26,
+      "paddingBottom": 26
+    }
+  },
+
+  "styles.header-rich-text-container": {
+    "gridContainer": {
+      "flex": null,
+      "paddingTop": 10,
+      "alignItems": "center"
+    }
+  },
+
+  "styles.input-search-offers": {
+    "container": {
+      "flexDirection": "row",
+      "flex": null,
+      "backgroundColor": "#F5F5F5",
+      "borderRadius": 16,
+      "height": 40,
+      "paddingHorizontal": 8,
+      "justifyContent": "space-between",
+      "marginTop": 26,
+      "shadowColor": "#000",
+      "borderWidth": 3,
+      "borderColor": "white",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+
+      "elevation": 5
+    },
+    "textStyles": {
+      "color": "#c2c2c2",
+      "padding": "{spacing[2]}"
+    },
+    "searchIcon": {
+      "padding": "{spacing[2]}"
+    }
+  },
+
+  "styles.header-text": {
+    "text": {
+      "color": "{palette.primary.main}",
+      "fontSize": 16,
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+
+  "styles.transparent-link-button": {
+    "text": {
+      "marginVertical": "{spacing[3]}",
+      "height": "{spacing[5]}",
+      "padding": "{spacing[2]}",
+      "textAlign": "center",
+      "color": "{palette.primary.main}",
+      "fontSize": 18,
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+  "styles.submit-button": {
+    "button": {
+      "backgroundColor": "{palette.primary.main}",
+      "height": "{spacing[5]}",
+      "borderRadius": "{spacing[5]}",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "buttonText": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.textPrimary.main}",
+      "fontSize": 18
+    },
+    "wrapper": {
+      "justifyContent": "flex-end"
+    }
+  },
+  "styles.submit-button-without-flex": {
+    "button": {
+      "backgroundColor": "{palette.primary.main}",
+      "height": "{spacing[5]}",
+      "borderRadius": "{spacing[5]}",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "buttonText": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.textPrimary.main}",
+      "fontSize": 18
+    },
+    "wrapper": {
+      "justifyContent": "flex-end"
+    }
+  },
+  "styles.signup-wrapper": {
+    "container": {
+      "flex": 1,
+      "padding": "{spacing[3]}",
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  "styles.signin-email-wrapper": {
+    "container": {
+      "flex": 1,
+      "padding": "{spacing[3]}",
+      "backgroundColor": "#fff"
+    }
+  },
+  "styles.add-new-address": {
+    "container": {
+      "flex": 1,
+      "padding": "{spacing[3]}",
+      "backgroundColor": "#fff"
+    }
+  },
+
+  "styles.form-input-otp": {
+    "OTPInputContainer": {
+      "marginTop": "{spacing[6]}"
+    }
+  },
+  "styles.resend-otp-code": {
+    "resendWrapper": {
+      "flex": 1,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "container": {
+      "flex": 1,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "resendTextTitle": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 18
+    },
+    "resendPressableText": {
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+  "styles.form-input-default": {
+    "inputContainer": {
+      "marginBottom": "{spacing[4]}",
+      "borderColor": "#E1E1E1",
+      "height": 48,
+      "borderRadius": 16,
+      "borderWidth": 1
+    },
+    "placeholder": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "{palette.primary.main}",
+      "marginBottom": "{spacing[1]}"
+    },
+    "input": {
+      "paddingHorizontal": "{spacing[3]}",
+      "fontSize": 16,
+      "color": "{palette.primary.main}"
+    },
+    "itemTitleStyle":{
+      "marginLeft": 10,
+      "color": "#1A1919",
+      "fontSize": 16,
+      "fontFamily":"Poppins-Light"
+    }
+  },
+  "styles.form-input-phone": {
+    "inputContainer": {
+      "borderColor": "#E1E1E1",
+      "borderWidth": 1,
+      "height": 48,
+      "borderRadius": 16,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "paddingHorizontal": "{spacing[3]}",
+      "marginBottom": "{spacing[2]}"
+    },
+    "flag": {
+      "fontSize": 24,
+      "color": "#000"
+    },
+    "code": {
+      "color": "#000",
+      "fontSize": 18,
+      "paddingHorizontal": "{spacing[1]}"
+    },
+    "placeholder": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "{palette.primary.main}",
+      "marginBottom": "{spacing[1]}"
+    },
+    "input": {
+      "flex": 1,
+      "paddingHorizontal": "{spacing[1]}",
+      "fontSize": 20,
+      "color": "#24135F",
+      "opacity": 0.4
+    }
+  },
+  "styles.form-select": {
+    "button": {
+      "flexDirection": "row",
+      "borderColor": "{palette.primary.main}",
+      "borderRadius": 48,
+      "borderWidth": 1,
+      "height": 48,
+      "marginBottom": "{spacing[4]}",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "paddingHorizontal": 24
+    },
+    "placeholder": {
+      "fontSize": 18,
+      "color": "{palette.primary.main}"
+    },
+    "arrowContainer": {
+      "justifyContent": "center",
+      "alignItems": "center",
+      "width": 18,
+      "height": 18,
+      "borderRadius": 18,
+      "backgroundColor": "{palette.primary.main}"
+    }
+  },
+  "styles.text-title": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "fontSize": 24,
+      "marginBottom": 16
+    }
+  },
+  "styles.text-description": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "fontSize": 18,
+      "marginBottom": "{spacing[4]}"
+    }
+  },
+  "styles.signing-container": {
+    "container": {
+      "marginHorizontal": "{spacing[2]}"
+    }
+  },
+  "styles.signing-title": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "fontSize": 26
+    }
+  },
+  "styles.term-and-conditions": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "fontSize": 16
+    }
+  },
+  "styles.term-and-conditions.link": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "fontSize": 16,
+      "textDecorationLine": "underline"
+    }
+  },
+  "styles.signing-email": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#F96F88",
+      "fontSize": 16
+    }
+  },
+  "styles.signin-description": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "fontSize": 18,
+      "fontWeight": "300",
+      "marginBottom": "{spacing[6]}"
+    }
+  },
+  "styles.text-description-flow_fifth_step": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "fontSize": 18,
+      "marginBottom": "{spacing[4]}",
+      "fontWeight": "300"
+    }
+  },
+  "styles.flag-emoji": {
+    "text": {
+      "color": "{palette.primary.main}",
+      "fontSize": 64,
+      "marginBottom": "{spacing[4]}"
+    }
+  },
+  "styles.divider": {
+    "divider": {
+      "marginBottom": "{spacing[4]}",
+      "backgroundColor": "#C1C1C1"
+    }
+  },
+  "styles.options-list": { 
+    "itemContainer": {
+      "flexDirection": "row",
+      "borderColor": "#E1E1E1",
+      "borderWidth": 1,
+      "height": 56,
+      "paddingHorizontal": "{spacing[3]}",
+      "borderRadius": 16,
+      "alignItems": "center",
+      "marginBottom": "{spacing[3]}"
+    },
+    "itemContainerSelected": {
+      "backgroundColor": "#DEF8E8"
+    },
+    "circleCheck": {
+      "stroke": "#fff"
+    },
+    "circleSelected": {
+      "borderColor": "#26C65C"
+    },
+    "itemTitle": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "marginLeft": "{spacing[2]}",
+      "color": "{palette.textSecondary.main}"
+    },
+    "itemDescription": {
+      "fontSize": 14,
+      "fontStyle": "italic",
+      "color": "{palette.textSecondary.main}",
+      "opacity": 0.6,
+      "marginLeft": "{spacing[2]}"
+    }
+  },
+  "styles.term-and-conditions.options-list": {
+    "listStyle": {
+      "flex": null,
+      "marginTop": "{spacing[3]}"
+    },
+    "itemContainer": {
+      "flexDirection": "row",
+      "height": 56,
+      "alignItems": "center",
+      "marginBottom": "{spacing[3]}"
+    },
+    "circleSelected": {
+      "borderColor": "#26C65C"
+    },
+    "itemContainerSelected": {},
+    "circleCheck": {
+      "stroke": "#fff"
+    }
+  },
+  "styles.terms-and-conditions": {
+    "itemContainer": {
+      "flexDirection": "row",
+      "height": 56,
+      "paddingHorizontal": "{spacing[3]}",
+      "borderRadius": 56,
+      "alignItems": "center",
+      "marginBottom": "{spacing[3]}"
+    },
+    "circleCheck": {
+      "stroke": "#fff"
+    },
+    "itemTitle": {
+      "fontSize": 16,
+      "marginLeft": "{spacing[2]}"
+    },
+    "itemDescription": {
+      "fontSize": 14,
+      "fontStyle": "italic",
+      "marginLeft": "{spacing[2]}"
+    }
+  },
+
+  "styles.product-list-collection": {
+    "productContainer": {
+      "flex": 1
+    },
+    "container": {
+      "maxWidth": 200,
+      "padding": 8
+    },
+    "wrap": {},
+    "productName": {
+      "fontWeight": "300",
+      "marginTop": 8,
+      "marginBottom": 8,
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052"
+    },
+    "productPriceWrap": {},
+    "brand": {
+      "fontFamily": "Poppins-Light",
+      "color": "rgba(57, 0, 82, 0.4)",
+      "fontSize": 16
+    },
+    "productPriceDiscount": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "marginTop": 8,
+      "fontSize": 16
+    },
+    "productPriceDiscountPercentage": {
+      "fontSize": 16,
+      "lineHeight": 16,
+      "alignItems": "center",
+      "color": "#26C65C"
+    },
+    "productPriceSimple": {
+      "marginTop": 8,
+      "fontSize": 20,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "image": {},
+    "imageContainer": {
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "buttonStyleSimple": {
+      "backgroundColor": "#FFEEED",
+      "width": "100%",
+      "height": 50,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "lineHeight": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+
+    "containerQuantitySelectorSimple": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "alignItems": "center",
+
+      "borderRadius": 8,
+      "marginVertical": 10
+    },
+    "buttonStyleQuantitySelectorSimple": {
+      "height": 32,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonQuantitySelectorSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "color": "#fff",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "quantityTextSimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableTextSimple": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-SemiBold",
+      "fontWeight": "600",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableQuantitySimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+    "wrapperAvailableSimple": {
+      "flexDirection": "row"
+    },
+    "wrapperQuantitySelectorSimple": {
+      "marginHorizontal": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "wrapperQuantitySelectorButtonsSimple": {
+      "backgroundColor": "#390052",
+      "borderRadius": 8,
+      "marginHorizontal": "{spacing[3]}"
+    }
+  },
+  "styles.product-list": {
+    "containerPriceRange": {
+      "marginTop": 20,
+      "marginHorizontal": 40,
+      "justifyContent": "center",
+      "alignContent": "center",
+      "alignItems": "center"
+    },
+
+    "textContainerPriceRange": {
+      "flexDirection": "row",
+      "marginBottom": 40,
+      "alignContent": "center",
+      "width": "100%",
+      "justifyContent": "space-between"
+    },
+ 
+    "labelPriceRange": {
+      "fontSize": 14,
+      "color": "#777"
+    },
+    "lane": {
+      "backgroundColor": "rgba(38, 198, 92, 0.2)",
+      "position": "absolute",
+      "height": 10,
+      "borderRadius": 6,
+      "width": 200
+    },
+    "knob": {
+      "height": 20,
+      "width": 20,
+      "left": 40,
+      "borderRadius": 10,
+      "backgroundColor": "#fff",
+      "position": "absolute",
+      "elevation": 5,
+      "shadowColor": "#000",
+      "shadowRadius": 4,
+      "shadowOffset": {
+        "height": 2,
+        "width": 0
+      }
+    },
+    "wrapperActionSheet": {
+      "height": 732,
+      "width": "100%"
+    },
+    "wrapperTitleActionsheet": {
+      "flexDirection": "row",
+      "justifyContent": "space-between"
+    },
+    "displayTitleActionsheet": {
+      "fontSize": 20,
+      "color": "#390052",
+      "marginBottom": 4,
+      "fontFamily": "Poppins-SemiBold",
+      "marginLeft": 20
+    },
+    "removeButtonWrapperActionSheet": {
+      "backgroundColor": "#F5F5F5",
+      "height": 32,
+      "width": 32,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 24,
+      "marginRight": 20
+    },
+
+    "titleActionStyle": {
+      "fontSize": 16,
+      "color": "#390052",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 20
+    },
+    "wrapperOptionsActionSheet": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "marginRight": 20,
+      "borderStyle": "solid",
+      "borderBottomColor": "#DDDBDB",
+      "borderBottomWidth": 0.5
+    },
+    "wrapperOptionsTextActionSheet": {
+      "flexDirection": "column",
+      "marginHorizontal": 10,
+      "marginVertical": 10
+    },
+    "nameOptionActionSheet": {
+      "fontSize": 14,
+      "color": "#390052",
+      "marginBottom": 4,
+
+      "fontFamily": "Poppins-SemiBold",
+      "marginLeft": 10
+    },
+    "descriptionOptionActionSheet": {
+      "fontSize": 14,
+      "color": "#390052",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 10
+    },
+    "headerFilter": {
+      "justifyContent": "space-between",
+      "backgroundColor": "#FFF",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "height": 40,
+      "borderRadius": 8
+    },
+    "wrapperTextActionSheet": {
+      "backgroundColor": "#F5F5F5",
+      "height": 40,
+      "justifyContent": "center",
+      "marginTop": 10
+    },
+    "displayNameHeaderFilter": {
+      "fontSize": 16,
+      "color": "#390052",
+      "marginBottom": 4,
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 10
+    },
+    "arrowContainer": {
+      "justifyContent": "center",
+      "alignItems": "center",
+      "marginHorizontal": 10,
+      "width": 18,
+      "height": 18,
+      "borderRadius": 18,
+      "backgroundColor": "#390052"
+    },
+
+    "cartButtonWrapDefault": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "marginBottom": "{spacing[3]}"
+    },
+    "removeButtonWrapper": {
+      "backgroundColor": "#F5F5F5",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 100,
+      "width": 30,
+      "height": 30
+    },
+    "productContainer": {
+      "backgroundColor": "#FFF",
+      "flex": 1
+    },
+    "containerDefault": {
+      "borderColor": "#DDDBDB",
+      "borderBottomWidth": 1,
+      "flexDirection": "row",
+      "width": "100%",
+      "marginVertical": "{spacing[2]}"
+    },
+    "wrapDefault": {
+      "paddingHorizontal": 8,
+      "width": "70%",
+      "maxWidth": "70%"
+    },
+    "productNameDefault": {
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "#390052"
+    },
+    "productNameWrapDefault": {},
+    "productPriceWrapDefault": {
+      "justifyContent": "space-between"
+    },
+
+    "brand": {
+      "fontFamily": "Poppins-Light",
+      "color": "rgba(57, 0, 82, 0.4)",
+      "fontSize": 16
+    },
+    "productPriceDiscountDefault": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "fontSize": 13
+    },
+    "productPriceDiscountPercentageDefault": {
+      "fontSize": 14,
+      "lineHeight": 16,
+      "alignItems": "center",
+      "color": "#26C65C"
+    },
+    "productPriceDefault": {
+      "fontSize": 18,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "imageDefault": {},
+    "imageContainerDefault": {
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "buttonStyleSimple": {
+      "backgroundColor": "#FFEEED",
+      "width": 40,
+      "height": 40,
+      "borderRadius": 50,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    }
+  },
+  "styles.header-container-search": {
+    "gridContainer": {
+      "flex": null,
+      "marginTop": -20,
+      "backgroundColor": "#fff",
+      "paddingHorizontal": 26,
+      "paddingBottom": 26
+    }
+  },
+
+  "styles.product-detail": {
+    "containerHighPrices": {
+      "marginLeft": 20,
+      "borderRadius": 40,
+      "width": 200,
+      "backgroundColor": "#fff",
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "width": 0,
+        "height": 2
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+      "elevation": 5
+    },
+    "textHighPricesNotReportedStyles": {
+      "color": "#AA26C6",
+      "fontFamily": "Poppins",
+      "fontWeight": "300",
+      "marginLeft": "{spacing[2]}"
+    },
+    "textHighPricesReportedStyles": {
+      "color": "#26C65C",
+      "fontFamily": "Poppins",
+      "fontWeight": "300",
+      "marginLeft": "{spacing[2]}"
+    },
+    "wrapHighPrices": {
+      "alignItems": "center",
+      "padding": "{spacing[2]}",
+      "flexDirection": "row"
+    },
+    "badges": {
+      "flexDirection": "row"
+    },
+    "wrapperBadges": {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginRight": 24
+    },
+    "badgeNew": {
+      "backgroundColor": "#AA26C6",
+      "width": 74,
+      "marginLeft": "{spacing[3]}",
+      "borderTopLeftRadius": 0,
+      "borderTopRightRadius": 12,
+      "borderBottomLeftRadius": 12,
+      "borderBottomRightRadius": 12,
+      "alignItems": "center"
+    },
+    "textBadgeNew": {
+      "color": "#fff",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "badgeDiscount": {
+      "backgroundColor": "#F96F88",
+      "width": 74,
+      "marginLeft": "{spacing[3]}",
+      "borderTopLeftRadius": 0,
+      "borderTopRightRadius": 12,
+      "borderBottomLeftRadius": 12,
+      "borderBottomRightRadius": 12,
+      "alignItems": "center"
+    },
+    "productPriceDiscountPercentage": {
+      "color": "#fff",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "containerShare": {},
+    "wrapShare": {
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginVertical": "{spacing[3]}"
+    },
+    "textShareStyles": {
+      "fontSize": 16,
+      "fontFamily": "Poppins",
+      "fontWeight": "300",
+      "color": "#390052"
+    },
+    "shareIcon": {
+      "marginHorizontal": "{spacing[2]}"
+    },
+    "container": {
+      "flex": 1,
+      "backgroundColor": "#fff",
+      "paddingBottom": 40
+    },
+    "header": {
+      "justifyContent": "flex-start",
+      "padding": 10
+    },
+    "cartButton": {
+      "padding": 10,
+      "width": "100%"
+    },
+    "priceContainer": {
+      "justifyContent": "flex-start",
+      "paddingVertical": 20,
+      "paddingLeft": 10
+    },
+    "price": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 24,
+      "color": "#0A0C0B"
+    },
+    "priceDiscount": {
+      "fontFamily": "Poppins",
+      "fontWeight": "300",
+      "fontSize": 16,
+      "textDecorationLine": "line-through",
+      "color": "#888888"
+    },
+    "title": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 18,
+      "color": "#390052",
+      "padding": 10,
+      "fontWeight": "bold"
+    },
+    "description": {
+      "fontFamily": "Poppins",
+      "fontWeight": "300",
+      "fontSize": 16,
+      "padding": 10,
+      "textAlign": "justify",
+      "color": "#390052"
+    },
+
+    "containerDescription": {
+      "padding": 10,
+      "justifyContent": "center"
+    },
+
+    "vendor": {
+      "fontFamily": "Poppins",
+      "fontSize": 16,
+      "fontWeight": "300",
+      "color": "#390052"
+    },
+
+    "containerProductDetail": {
+      "flexDirection": "row"
+    },
+    "imageContainerProductDetail": {
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "name": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 18,
+      "color": "#390052"
+    },
+
+    "buttonStyleDefault": {
+      "backgroundColor": "#FFEEED",
+
+      "height": 50,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+
+    "textButtonDefault": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+
+    "buttonStyleSimple": {
+      "backgroundColor": "#AA26C6",
+      "width": "100%",
+      "height": 40,
+      "borderRadius": 100,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "padding": "{spacing[2]}"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 18,
+      "color": "#FFF",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "containerQuantitySelectorDefault": {
+      "backgroundColor": "#FFEEED",
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "marginHorizontal": 10,
+      "borderRadius": 8,
+      "marginVertical": 10
+    },
+    "buttonStyleQuantitySelectorDefault": {
+      "marginHorizontal": 10,
+      "height": 50,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonQuantitySelectorDefault": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "color": "#390052",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "quantityTextDefault": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableTextDefault": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-SemiBold",
+      "fontWeight": "600",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableQuantityDefault": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+
+      "textAlign": "center"
+    },
+    "wrapperAvailableDefault": {
+      "flexDirection": "row"
+    },
+    "wrapperQuantitySelectorDefault": {
+      "marginHorizontal": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "containerQuantitySelectorSimple": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "alignItems": "center",
+
+      "borderRadius": 8,
+      "marginVertical": 10
+    },
+    "buttonStyleQuantitySelectorSimple": {
+      "height": 32,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonQuantitySelectorSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "color": "#fff",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "quantityTextSimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableTextSimple": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-SemiBold",
+      "fontWeight": "600",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableQuantitySimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+    "wrapperAvailableSimple": {
+      "flexDirection": "row"
+    },
+    "wrapperQuantitySelectorSimple": {
+      "marginHorizontal": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "wrapperQuantitySelectorButtonsSimple": {
+      "backgroundColor": "#390052",
+      "borderRadius": 8,
+      "marginHorizontal": "{spacing[3]}"
+    },
+    "productPriceSimple": {
+      "marginTop": 8,
+      "fontSize": 20,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+
+  "styles.cart-badge": {
+    "cartBadge": {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "width": 60,
+      "height": 32,
+      "borderRadius": 36
+    },
+    "wrapper": {
+      "flexDirection": "row",
+      "width": 40,
+      "justifyContent": "space-between"
+    },
+    "textStyles": {
+      "fontFamily": "Poppins-SemiBold",
+      "bottom": 0,
+      "color": "#fff"
+    }
+  },
+
+  "styles.text-description-wishlist": {
+    "title": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+      "fontSize": 24,
+      "marginBottom": 16,
+      "margin": "{spacing[3]}"
+    },
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}",
+      "fontSize": 18,
+      "marginBottom": "{spacing[3]}",
+      "marginLeft": "{spacing[3]}"
+    }
+  },
+  "styles.product-list-cart": {
+    "containerEmptyState": {
+      "flex": 1,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "title": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#390052",
+      "fontSize": 24,
+      "marginBottom": 16,
+      "margin": 10
+    },
+    "subtitle": {
+      "fontFamily": "Poppins-Light",
+      "color": "#390052",
+      "fontSize": 18,
+      "textAlign": "center",
+      "marginHorizontal": 46,
+      "marginBottom": 16,
+      "margin": 10
+    },
+    "cartButtonWrapCart": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "marginBottom": "{spacing[3]}"
+    },
+    "removeButtonWrapper": {
+      "backgroundColor": "#F5F5F5",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 100,
+      "width": 30,
+      "height": 30,
+      "marginLeft": "{spacing[2]}"
+    },
+    "productContainer": {
+      "backgroundColor": "#FFF",
+      "flex": 1
+    },
+    "containerCart": {
+      "borderColor": "#DDDBDB",
+      "borderBottomWidth": 1,
+      "flexDirection": "row",
+      "width": "100%",
+      "marginVertical": "{spacing[2]}"
+    },
+    "wrapCart": {
+      "paddingHorizontal": 8,
+      "width": "62%",
+      "maxWidth": "62%"
+    },
+    "productNameCart": {
+      "fontWeight": "300",
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "#390052"
+    },
+    "productNameWrapCart": {
+      "flexDirection": "row"
+    },
+    "productPriceWrapCart": {
+      "justifyContent": "space-between"
+    },
+
+    "brand": {
+      "fontFamily": "Poppins-Light",
+      "color": "rgba(57, 0, 82, 0.4)",
+      "fontSize": 16
+    },
+    "productPriceDiscountCart": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "fontSize": 13
+    },
+    "productPriceDiscountPercentageCart": {
+      "fontSize": 14,
+      "lineHeight": 16,
+      "alignItems": "center",
+      "color": "#26C65C"
+    },
+    "productPriceCart": {
+      "fontSize": 18,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "imageCart": {},
+    "imageContainerCart": {
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "buttonStyle": {
+      "backgroundColor": "#FFEEED",
+      "width": 40,
+      "height": 40,
+      "borderRadius": 50,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButton": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    }
+  },
+  "styles.product-list-collection-wishlist": {
+    "containerEmptyState": {
+      "flex": 1,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+
+    "title": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#390052",
+      "fontSize": 24,
+      "marginBottom": 16,
+      "margin": 10
+    },
+    "subtitle": {
+      "fontFamily": "Poppins-Light",
+      "color": "#390052",
+      "fontSize": 18,
+      "textAlign": "center",
+      "marginHorizontal": 46,
+      "marginBottom": 16,
+      "margin": 10
+    },
+    "productContainer": {
+      "flex": 1
+    },
+    "container": {
+      "maxWidth": 200,
+      "padding": 8
+    },
+    "wrap": {},
+    "productName": {
+      "fontWeight": "300",
+      "marginTop": 8,
+      "marginBottom": 8,
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052"
+    },
+    "productPriceWrap": {},
+    "brand": {
+      "fontFamily": "Poppins-Light",
+      "color": "rgba(57, 0, 82, 0.4)",
+      "fontSize": 16
+    },
+    "productPriceDiscount": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "marginTop": 8,
+      "fontSize": 16
+    },
+    "productPriceDiscountPercentage": {
+      "fontSize": 16,
+      "lineHeight": 16,
+      "alignItems": "center",
+      "color": "#26C65C"
+    },
+    "productPriceWishlist": {
+      "marginTop": 8,
+      "fontSize": 20,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "image": {},
+    "imageContainer": {
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "buttonStyleSimple": {
+      "backgroundColor": "#FFEEED",
+      "width": "100%",
+      "height": 50,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "lineHeight": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+
+    "containerQuantitySelectorSimple": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "alignItems": "center",
+
+      "borderRadius": 8,
+      "marginVertical": 10
+    },
+    "buttonStyleQuantitySelectorSimple": {
+      "height": 32,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonQuantitySelectorSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "color": "#fff",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "quantityTextSimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableText": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-SemiBold",
+      "fontWeight": "600",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableQuantity": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 16,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+    "wrapperAvailable": {
+      "flexDirection": "row"
+    },
+    "wrapperQuantitySelectorSimple": {
+      "marginHorizontal": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "wrapperQuantitySelectorButtonsSimple": {
+      "backgroundColor": "#390052",
+      "borderRadius": 8,
+      "marginHorizontal": "{spacing[3]}"
+    }
+  },
+  "styles.cart-summary": {
+    "showDetails": {
+      "marginTop": 20,
+      "marginBottom": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+
+    "textShowDetails": {
+      "color": "#390052",
+      "fontSize": 18,
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "wrapperIconShowDetail": {
+      "backgroundColor": "#390052",
+      "height": 18,
+      "width": 18,
+      "borderRadius": 18,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "wrapperPurchaseDetail": {
+      "marginTop": 10,
+      "height": "100%",
+      "width": "100%",
+      "backgroundColor": "white"
+    },
+    "wrapperPurchaseDetailText": {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "alignItems": "center"
+    },
+    "textProductsDetails": {
+      "color": "rgba(57, 0, 82, 0.5)",
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light"
+    },
+    "textTaxDetails": {
+      "color": "#DD1E2F",
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light"
+    },
+    "textDiscountsDetails": {
+      "color": "#26C65C",
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light"
+    },
+    "wrapperTextTermometer": {
+      "marginTop": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textTermometer": {
+      "color": "#390052",
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light"
+    },
+    "textTermometerBold": {
+      "color": "#390052",
+      "fontSize": 14,
+      "fontFamily": "Poppins-SemiBold"
+    }
+  },
+  "styles.icon-floating": {
+    "gridContainer": {
+      "flex": null,
+      "height": 140,
+      "width": "100%",
+      "position": "absolute",
+      "top": 50
+    }
+  },
+  "styles.header-help-desk": {
+    "gridContainer": {
+      "flex": null,
+      "height": 240,
+      "width": "100%"
+    }
+  },
+  "styles.help-center-content-wrapper": {
+    "gridContainer": {
+      "flexDirection": "column",
+      "flex": null,
+      "height": 100,
+      "marginHorizontal": "{spacing[3]}",
+      "marginVertical": "{spacing[2]}",
+      "borderColor": "#DDDBDB",
+      "borderWidth": 1,
+      "borderRadius": 16,
+      "padding": "{spacing[1]}"
+    }
+  },
+  "styles.header-container-help-center": {
+    "gridContainer": {
+      "flex": 1,
+      "backgroundColor": "#fff"
+    }
+  },
+  "styles.title-help-center": {
+    "text": {
+      "fontSize": 16,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}"
+    }
+  },
+  "styles.subtitle-help-center": {
+    "text": {
+      "marginLeft": "{spacing[3]}",
+      "marginBottom": "{spacing[2]}",
+      "fontSize": 16,
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}"
+    }
+  },
+  "styles.help-center-wrapper-text": {
+    "gridContainer": {
+      "marginHorizontal": "{spacing[3]}",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "alignContent": "center",
+      "alignItems": "center"
+    }
+  },
+  "styles.add-comments-cart-wrapper": {
+    "container": {
+      "height": 300,
+      "padding": "{spacing[3]}",
+      "backgroundColor": "#FFFFFF",
+      "justifyContent": "space-between",
+      "borderRadius": 6,
+      "shadowOffset": {
+        "height": 10,
+        "width": 0
+      },
+      "shadowOpacity": 0.25,
+      "elevation": 10,
+      "width": "88%"
+    }
+  },
+  "styles.text-title-cart": {
+    "text": {
+      "fontFamily": "Poppins-Light",
+      "color": "#1A1919",
+      "fontSize": 18,
+      "marginBottom": "10%"
+    }
+  },
+  "styles.add-comments": {
+    "addCommentsTitle": {
+      "fontSize": 18,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#390052",
+      "marginTop": 10
+    },
+    "addCommentsSubtitle": {
+      "fontSize": 16,
+      "fontFamily": "Poppins-Light",
+      "color": "#390052",
+      "marginTop": 4
+    }
+  },
+  "styles.grid-category-page-list":{
+    "gridContainer": {
+      "flex": null,
+      "height":90,
+      "alignItems": "center",
+      "justifyContent":"center",
+      "alignContent":"center",
+      "marginLeft":"{spacing[3]}"
+    }
+  },
+  "styles.grid-brand-recommendation": {
+    "gridContainer": {
+      "flex": null,
+      "height": 20
+    }
+   },
+  "styles.brand-recommendation": {
+    "text": {
+      "fontSize": 20,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.primary.main}",
+   
+      "marginTop": 24
+    }
+  },
+  "styles.valid-title":{
+    "text":{ 
+      "fontSize": 12,
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#AA26C6"
+   
+     }
+  },
+  "styles.brand-title":{
+    "text":{ 
+      "fontSize": 14,
+      "fontFamily": "Poppins-Light",
+      "color": "{palette.primary.main}"
+   
+     }
+  },
+  "styles.grid-wrapper-brand-recommendation":{
+    "gridContainer": {
+      "marginHorizontal":"{spacing[3]}",
+ 
+      "flex": 1,
+      "justifyContent":"space-between",
+      "alignContent":"center",
+      "alignItems":"center"
+      
+    }
+  },
+  "styles.notification-cart":{
+    "cartNotificationContainer":{
+      "height":56,
+      "backgroundColor":"#FFEEED",
+      "flexDirection":"row",
+      "alignContent":"center",
+      "alignItems":"center",
+      "justifyContent":"space-between"
+  
+    },
+    "cartNotificationWrapper":{
+      "flexDirection":"row",
+      "marginHorizontal":20,
+    "alignContent":"center",
+    "alignItems":"center"
+    },
+   
+    "cartNotificationTitle":{
+      "fontSize": 13,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold",
+      "marginLeft": 10
+    },
+    "cartNotificationWrapperText":{
+      "maxWidth": 180
+    },
+    "cartNotificationDescription":{
+      "fontSize": 12,
+      "color": "#390052",
+      "fontFamily": "Poppins-Light",
+      "marginLeft": 10
+     
+    },
+    "cartNotificationRemoveButtonWrapper": {
+      "backgroundColor": "#F5F5F5",
+      "height": 32,
+      "width": 32,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "borderRadius": 24,
+      "marginRight": 20
+    }
+  },
+  "styles.submit-button-high-prices": {
+    "button": {
+      "backgroundColor": "#AA26C6",
+      "height": "{spacing[5]}",
+      "borderRadius": "{spacing[5]}",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "buttonText": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "{palette.textPrimary.main}",
+      "fontSize": 18
+    },
+    "wrapper": {
+      "justifyContent": "flex-end"
+    }
+  },
+  "styles.category-page-collection": {
+    "productContainer": {
+      "flex": 1
+ 
+    },
+    "containerSimple": {
+ 
+      "maxWidth": 200,
+      "padding": 8
+    },
+    "wrapSimple": {
+ 
+    },
+    "productNameSimple": {
+      "fontWeight": "300",
+      "marginTop": 8,
+      "marginBottom": 8,
+      "fontFamily": "Poppins-Light",
+      "fontSize": 14,
+      "color": "#390052"
+    },
+    "productPriceWrap": {},
+    "brandSimple": {
+      "fontFamily": "Poppins-Light",
+      "color": "rgba(57, 0, 82, 0.4)",
+      "fontSize": 14
+    },
+    "productPriceDiscountSimple": {
+      "fontFamily": "Poppins-Light",
+      "color": "#888888",
+      "textDecorationLine": "line-through",
+      "marginTop": 8,
+      "fontSize": 12
+    },
+    "productPriceDiscountPercentage": {
+      "fontSize": 10,
+      "lineHeight": 16,
+      "alignItems": "center",
+      "color": "#26C65C"
+    },
+    "productPriceSimple": {
+      "marginTop": 8,
+      "fontSize": 14,
+      "color": "#AA26C6",
+      "fontFamily": "Poppins-SemiBold"
+    },
+    "image": {},
+    "imageContainer": {
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "buttonStyleSimple": {
+      "backgroundColor": "#FFEEED",
+      "width": 120,
+      "height": 36,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "color": "#F96F88",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+
+    "containerQuantitySelectorSimple": {
+      "justifyContent": "space-between",
+      "flexDirection": "row",
+      "alignItems": "center",
+
+      "borderRadius": 8,
+      "marginVertical": 10
+    },
+    "buttonStyleQuantitySelectorSimple": {
+      "height": 32,
+      "borderRadius": 8,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "textButtonQuantitySelectorSimple": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 20,
+      "color": "#fff",
+      "fontWeight": "600",
+      "textAlign": "center"
+    },
+    "quantityTextSimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 12,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableTextSimple": {
+      "marginLeft": 10,
+      "fontFamily": "Poppins-SemiBold",
+      "fontWeight": "600",
+      "fontSize": 12,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+
+    "textStylesAvailableQuantitySimple": {
+      "fontFamily": "Poppins-Light",
+      "fontSize": 12,
+      "color": "#390052",
+      "textAlign": "center"
+    },
+    "wrapperAvailableSimple": {
+      "flexDirection": "row"
+    },
+    "wrapperQuantitySelectorSimple": {
+      "marginHorizontal": 10,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "wrapperQuantitySelectorButtonsSimple": {
+      "backgroundColor": "#390052",
+      "borderRadius": 8,
+      "marginHorizontal": "{spacing[3]}"
+    }
+  },
+  "styles.conditional-collection-style":{
+    "container": {
+      "height": 300
+    },
+    "containerText": {
+      "margin": 10,
+      "justifyContent": "space-between",
+      "flexDirection": "row"
+    },
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "fontSize": 18,
+      "color": "#390052",
+      "justifyContent": "center",
+      "textAlign": "center"
+    }
+  },
+
+   "styles.modal-wrapper": {
+    "gridContainer": {
+      "marginVertical": "65%",
+      "paddingHorizontal": "{spacing[3]}",
+      "paddingVertical": "{spacing[3]}",
+      "backgroundColor": "#FFFFFF",
+      "justifyContent": "space-between",
+      "borderRadius": 12,
+      "shadowOffset": {
+        "height": 10,
+        "width": 0
+      },
+      "shadowOpacity": 0.25,
+      "elevation": 10,
+      "width": "88%"
+    }
+  },
+  "styles.text-title-modal-cart": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#390052",
+      "fontSize": 18,
+      "marginTop":"{spacing[2]}"
+    }
+  },
+  "styles.button-sign-in": {
+    "gridItem": {
+      "height":50,
+      "width":300,
+       "padding": "{spacing[1]}",
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 40,
+      "shadowOffset": {
+        "height": 2,
+        "width": 0
+      },
+      "shadowOpacity": 0.25,
+      "elevation": 2,
+      "justifyContent":"center",
+      "alignContent":"center",
+      "alignItems":"center"
+    
+    }
+  },
+  "styles.button-sign-up": {
+    "gridItem": {
+      "marginVertical":10,
+      "height":50,
+      "width":300,
+       "padding": "{spacing[1]}",
+      "backgroundColor": "#AA26C6",
+      "borderRadius": 40,
+      "shadowOffset": {
+        "height": 2,
+        "width": 0
+      },
+      "shadowOpacity": 0.25,
+      "elevation": 2,
+      "justifyContent":"center",
+      "alignContent":"center",
+      "alignItems":"center"
+    
+    }
+  },
+  "styles.buttons-modal-sign-in":{
+    "gridItem":{
+       "justifyContent":"center",
+      "alignContent":"center",
+      "alignItems":"center"
+    }
+  },
+  "styles.modal-cart-badge-button-sign-in": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#AA26C6",
+      "fontSize": 16
+    
+    }
+  },
+  "styles.modal-cart-badge-button-sign-up": {
+    "text": {
+      "fontFamily": "Poppins-SemiBold",
+      "color": "#fff",
+      "fontSize": 16
+    
+    }
+  }
+  
+ 
+}
