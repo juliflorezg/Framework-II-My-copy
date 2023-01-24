@@ -48,6 +48,14 @@ type ThemeAction = {
   payload: PaletteType;
 };
 
+/**
+ * If the action type is 'SET_THEME', then return a new state object with the currentTheme property set
+ * to the payload of the action, and the theme property set to a new theme object with the palette
+ * property set to a new palette object with the type property set to the payload of the action.
+ * @param {ThemeState} state - ThemeState - The current state of the reducer.
+ * @param {ThemeAction} action - ThemeAction - This is the action that is dispatched to the reducer.
+ * @returns The state is being returned.
+ */
 function ThemeReducer(state: ThemeState, action: ThemeAction) {
   switch (action.type) {
     case 'SET_THEME': {

@@ -48,6 +48,7 @@ export default {
 
     context.products = cpyArr;
   },
+  /* A function that is called when the decrement action is called. */
   decrement: (context: Context, event: Event) => {
     const cpyArr = [...context.products];
     if (event?.product) {
