@@ -134,7 +134,7 @@
   "styles.signup-datos-contacto-main-container": {
     "gridContainer": {
       "flex": 1,
-      "backgroundColor": "crimson"
+      "backgroundColor": "wheat"
     }
   },
   "styles.signup-datos-contacto": {
