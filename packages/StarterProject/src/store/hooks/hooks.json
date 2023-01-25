@@ -64,6 +64,25 @@
           ]
         }
       ]
+    },
+    {
+      "name": "useMewtwoPokemon",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "method": "GET",
+        "url": "https://pokeapi.co/api/v2/pokemon/mewtwo"
+      },
+      "parseResponse": {
+        "to": {
+          "name": "name",
+          "image": "sprites.other.home.front_default"
+        }
+      },
+      "exec": [
+        {
+          "name": "useMewtwoPokemon"
+        }
+      ]
     }
   ]
 }
