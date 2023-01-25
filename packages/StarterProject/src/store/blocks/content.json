@@ -304,5 +304,58 @@
         ]
       }
     ]
+  },
+  "store.signin-pokemon": {
+    "importContext": ["useMewtwoPokemon"],
+    "children": [
+      "",
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "useMewtwoPokemon",
+          "text": "Hola soy {useMewtwoPokemon.name}"
+        }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "useMewtwoPokemon",
+          "text": "Mi imagen: {useMewtwoPokemon.image}"
+        }
+      },
+      {
+        "componentName": "image",
+        "props": {
+          "context": "useMewtwoPokemon",
+          "uri": "{useMewtwoPokemon.image}"
+        }
+      }
+    ]
+  },
+  "store.signin-email-password": {
+    "children": [
+      "",
+      {
+        "componentName": "store-form",
+        "props": {
+          "mode": "onChange"
+        },
+        "children": [
+          {
+            "componentName": "rich-text",
+            "props": {
+              "text": "form title"
+            }
+          },
+          {
+            "componentName": "store-form.input",
+            "props": {
+              "placeholder": "Ingresa tu correo",
+              "name": "email"
+            }
+          }
+        ]
+      }
+    ]
   }
 }
