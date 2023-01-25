@@ -1,20 +1,37 @@
-import React, {FC} from 'react';
+import React, {FC, useMemo} from 'react';
 import {ImageBackgroundComponent, Image} from '@my-app/ui';
 import useChildren from '@my-app/app/src/framework/engine/hooks/useChildren';
 import {BlockComponent} from '@my-app/app/src/framework/engine/types';
+import {useSharedValue} from '../RichText';
+import {addVarToString} from '@my-app/app/src/framework/omni-logic/plugin/utils/addVarToString';
 
-const ImageComponent: FC<BlockComponent> = ({
-  children,
-  props = {type: 'default'},
-}) => {
+const ImageComponent: FC<
+  BlockComponent<{
+    context?: string;
+    type?: string;
+    uri?: string;
+    resizeMode?: 'center' | 'repeat' | 'cover' | 'contain' | 'stretch';
+  }>
+> = ({children, props = {type: 'default'}}) => {
   const childrens = useChildren({children});
+
+  const context = props?.context;
+  const sharedValue = useSharedValue({context});
+
+  const computedImageUri = useMemo(() => {
+    let result = props?.uri;
+    if (context && sharedValue && props?.uri) {
+      result = addVarToString(result as string, sharedValue);
+    }
+    return result;
+  }, [props?.uri, sharedValue]);
 
   const renderImageBackground = () => {
     return (
       <ImageBackgroundComponent
         style={{flex: 1}}
         resizeMode={props?.resizeMode}
-        source={{uri: props?.uri}}>
+        source={{uri: computedImageUri}}>
         {childrens}
       </ImageBackgroundComponent>
     );
@@ -23,8 +40,10 @@ const ImageComponent: FC<BlockComponent> = ({
   const renderImage = () => {
     return (
       <Image
-        src={props?.uri}
+        src={computedImageUri as string}
+        //@ts-ignore
         width={props?.width}
+        //@ts-ignore
         height={props?.height}
         resizeMode={props?.resizeMode}
       />
