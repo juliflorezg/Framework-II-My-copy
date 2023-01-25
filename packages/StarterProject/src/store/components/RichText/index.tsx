@@ -17,7 +17,7 @@ type ConnectedType = {
   context?: string;
 };
 
-const useSharedValue = ({context}: ConnectedType) => {
+export const useSharedValue = ({context}: ConnectedType) => {
   if (!context) return null;
   const {hooks} = useExtension();
   // @ts-ignore
