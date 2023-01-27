@@ -75,12 +75,47 @@
       "parseResponse": {
         "to": {
           "name": "name",
-          "image": "sprites.other.home.front_default"
+          "image": "sprites.other.home.front_default",
+          "id": "id",
+          "weight": "weight",
+          "height": "height"
         }
       },
       "exec": [
         {
           "name": "useMewtwoPokemon"
+        },
+        {
+          "name": "StateMachine",
+          "function": "send",
+          "params": [
+            "authentication",
+            "SET_USER_DATA",
+            {
+              "user": {
+                "nombre": "{name}",
+                "image": "{image}",
+                "id": "{id}",
+                "weight": "{weight}",
+                "height": "{height}"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "usePokemonDetail",
+      "componentType": "omni-hook",
+      "fetchOptions": {
+        "method": "",
+        "url": ""
+      },
+      "exec": [
+        {
+          "name": "StateMachine",
+          "function": "getData",
+          "params": ["authentication"]
         }
       ]
     }
