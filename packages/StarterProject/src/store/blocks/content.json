@@ -308,6 +308,93 @@
       }
     ]
   },
+  "store.signin-email-password": {
+    "importContext": ["useSignWithEmailAndPassword"],
+    "children": [
+      "",
+      {
+        "componentName": "store-form",
+        "props": {
+          "context": "useSignWithEmailAndPassword",
+          "mode": "onChange",
+          "parseInput": {
+            "to": {"email": "email", "password": "password"}
+          },
+          "schemaValidation": [
+            {
+              "id": "email",
+              "type": "text",
+              "validationType": "string",
+              "validations": [
+                {
+                  "type": "required",
+                  "params": ["El correo electronico es requerido"]
+                },
+                {
+                  "type": "email",
+                  "params": ["Debe ser un correo valido"]
+                }
+              ]
+            },
+            {
+              "id": "password",
+              "type": "text",
+              "validationType": "string",
+              "validations": [
+                {
+                  "type": "min",
+                  "params": [
+                    8,
+                    "Tu contraseña debe contener mínimo 8 caracteres"
+                  ]
+                },
+                {"type": "matches", "params": ["/^.*[0-9].*$/", "1 número"]},
+                {"type": "matches", "params": ["/^.*[a-z].*$/", "1 minúscula"]},
+                {"type": "matches", "params": ["/^.*[A-Z].*$/", "1 mayúscula"]},
+                {
+                  "type": "matches",
+                  "params": [
+                    "/^.*[!@#\\$%\\^\\&*\\)\\(+=._-].*$/",
+                    "1 caracter especial #*@$ (Opcional)"
+                  ]
+                },
+                {"type": "required", "params": ["El campo es obligatorio"]}
+              ]
+            }
+          ]
+        },
+        "children": [
+          {
+            "componentName": "rich-text",
+            "props": {
+              "text": "form title"
+            }
+          },
+          {
+            "componentName": "store-form.input",
+            "props": {
+              "placeholder": "Ingresa tu correo",
+              "name": "email"
+            }
+          },
+          {
+            "componentName": "store-form.input",
+            "props": {
+              "isPassword": true,
+              "placeholder": "Ingresa tu contraseña",
+              "name": "password"
+            }
+          },
+          {
+            "componentName": "store-form.submit",
+            "props": {
+              "buttonText": "Continuar a detalles"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "store.pokemon-home": {
     "importContext": ["useMewtwoPokemon"],
     "children": [
@@ -345,7 +432,6 @@
   "store.pokemon-detail": {
     "importContext": ["usePokemonDetail"],
     "children": [
-      "",
       {
         "componentName": "rich-text",
         "props": {
@@ -356,55 +442,29 @@
         "componentName": "rich-text",
         "props": {
           "context": "usePokemonDetail",
-          "text": "{StateMachine.context.user.nombre}"
+          "text": "My name is: {StateMachine.context.user.nameFromHook}"
         }
       },
       {
         "componentName": "rich-text",
         "props": {
           "context": "usePokemonDetail",
-          "text": "Id: {StateMachine.authentication.context.user.id}"
+          "text": "Id: {StateMachine.context.user.id}"
         }
       },
       {
         "componentName": "rich-text",
         "props": {
           "context": "usePokemonDetail",
-          "text": "Weight: {StateMachine.authentication.context.user.weight}"
+          "text": "{StateMachine.context.user.weight}"
         }
       },
       {
         "componentName": "rich-text",
         "props": {
           "context": "usePokemonDetail",
-          "text": "Height: {StateMachine.authentication.context.user.height}"
+          "text": "Height: {StateMachine.context.user.height}"
         }
-      }
-    ]
-  },
-  "store.signin-email-password": {
-    "children": [
-      "",
-      {
-        "componentName": "store-form",
-        "props": {
-          "mode": "onChange"
-        },
-        "children": [
-          {
-            "componentName": "rich-text",
-            "props": {
-              "text": "form title"
-            }
-          },
-          {
-            "componentName": "store-form.input",
-            "props": {
-              "placeholder": "Ingresa tu correo",
-              "name": "email"
-            }
-          }
-        ]
       }
     ]
   }
