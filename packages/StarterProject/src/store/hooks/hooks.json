@@ -29,17 +29,16 @@
       ]
     },
     {
-      "name": "useSignWithEmail&Password",
+      "name": "useSignWithEmailAndPassword",
       "fetchOptions": {
-        "url": "{domain}/api/vtexid/pub/authentication/start",
-        "query": ""
+        "url": "{domain}/api/vtexid/pub/authentication/start"
       },
       "headerOptions": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "parseResponse": {
-          "to": {
-            "authenticationToken": "authenticationToken"
-          }
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "parseResponse": {
+        "to": {
+          "authenticationToken": "authenticationToken"
         }
       },
       "componentType": "omni-hook",
@@ -52,7 +51,7 @@
             {
               "name": "Navigation",
               "function": "linkTo",
-              "params": ["/home/welcome"]
+              "params": ["/pokemon/home"]
             }
           ],
           "onError": [
@@ -88,12 +87,13 @@
         {
           "name": "StateMachine",
           "function": "send",
+          "dependsOn": "useMewtwoPokemon",
           "params": [
             "authentication",
             "SET_USER_DATA",
             {
               "user": {
-                "nombre": "{name}",
+                "nameFromHook": "{name}",
                 "image": "{image}",
                 "id": "{id}",
                 "weight": "{weight}",
