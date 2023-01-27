@@ -13,6 +13,9 @@
           {
             "componentName": "walkthrough-view",
             "props": {
+              "hasCustomLink": true,
+              "customLinkText": "GO TO POKEMON!!",
+              "customLinkUrl": "/pokemon/home",
               "continue": true,
               "signup": true,
               "google": true,
@@ -305,7 +308,7 @@
       }
     ]
   },
-  "store.signin-pokemon": {
+  "store.pokemon-home": {
     "importContext": ["useMewtwoPokemon"],
     "children": [
       "",
@@ -324,10 +327,57 @@
         }
       },
       {
+        "componentName": "link",
+        "props": {
+          "text": "Go to Mewtwo details",
+          "href": "/pokemon/detail"
+        }
+      },
+      {
         "componentName": "image",
         "props": {
           "context": "useMewtwoPokemon",
           "uri": "{useMewtwoPokemon.image}"
+        }
+      }
+    ]
+  },
+  "store.pokemon-detail": {
+    "importContext": ["usePokemonDetail"],
+    "children": [
+      "",
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "here I'll display the pokemon details "
+        }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "usePokemonDetail",
+          "text": "{StateMachine.context.user.nombre}"
+        }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "usePokemonDetail",
+          "text": "Id: {StateMachine.authentication.context.user.id}"
+        }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "usePokemonDetail",
+          "text": "Weight: {StateMachine.authentication.context.user.weight}"
+        }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "context": "usePokemonDetail",
+          "text": "Height: {StateMachine.authentication.context.user.height}"
         }
       }
     ]
