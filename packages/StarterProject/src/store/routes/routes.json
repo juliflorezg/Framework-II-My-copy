@@ -66,15 +66,32 @@
             "title": "datos de contacto"
           }
         },
-        "signin-pokemon": {
-          "path": "pokemon",
+        "signin-email-password": {
+          "path": "signin/classic/password/first",
+          "type": "Component",
+          "options": {
+            "headerShown": false
+          }
+        }
+      }
+    },
+    "pokemon": {
+      "path": "pokemon",
+      "unMountIfIsAuthenticated": false,
+      "options": {
+        "headerShown": false
+      },
+      "type": "Stack",
+      "screens": {
+        "pokemon-home": {
+          "path": "home",
           "type": "Component",
           "options": {
             "headerShown": false
           }
         },
-        "signin-email-password": {
-          "path": "signin/classic/password/first",
+        "pokemon-detail": {
+          "path": "detail",
           "type": "Component",
           "options": {
             "headerShown": false
