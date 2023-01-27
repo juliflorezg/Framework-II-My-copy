@@ -15,6 +15,9 @@ type WalkthroughViewProps = {
   signupUrl?: string;
   continue?: boolean;
   continueUrl?: string;
+  hasCustomLink?: boolean;
+  customLinkText?: string;
+  customTextLink?: string;
 };
 
 const WalkthroughView: FC<BlockComponent<WalkthroughViewProps>> = ({props}) => {
@@ -78,8 +81,23 @@ const WalkthroughView: FC<BlockComponent<WalkthroughViewProps>> = ({props}) => {
     }
   };
 
+  const customLinkComp = () => {
+    if (props?.hasCustomLink && props?.customLinkText?.length) {
+      return (
+        <Link
+          style={{container: defaultStyles.customLink}}
+          href={props?.customLinkUrl}>
+          <Text style={[defaultStyles.customLinkText]}>
+            {props?.customLinkText}
+          </Text>
+        </Link>
+      );
+    }
+  };
+
   return (
     <View style={defaultStyles.container}>
+      {customLinkComp()}
       {continueWithEmail()}
       {facebookView()}
       {googleView()}
@@ -90,6 +108,20 @@ const WalkthroughView: FC<BlockComponent<WalkthroughViewProps>> = ({props}) => {
 
 const defaultStyles = StyleSheet.create({
   //
+  // Continue
+  customLink: {
+    backgroundColor: '#3761a8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 48,
+    borderRadius: 48,
+    marginBottom: 24,
+  },
+  customLinkText: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 16,
+    color: '#feca1b',
+  },
   // Continue
   continueLink: {
     backgroundColor: '#F96F88',
