@@ -17,7 +17,7 @@ type WalkthroughViewProps = {
   continueUrl?: string;
   hasCustomLink?: boolean;
   customLinkText?: string;
-  customTextLink?: string;
+  customLinkUrl?: string;
 };
 
 const WalkthroughView: FC<BlockComponent<WalkthroughViewProps>> = ({props}) => {
@@ -82,7 +82,7 @@ const WalkthroughView: FC<BlockComponent<WalkthroughViewProps>> = ({props}) => {
   };
 
   const customLinkComp = () => {
-    if (props?.hasCustomLink && props?.customLinkText?.length) {
+    if (props?.hasCustomLink && props?.customLinkUrl?.length) {
       return (
         <Link
           style={{container: defaultStyles.customLink}}
