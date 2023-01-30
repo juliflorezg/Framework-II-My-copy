@@ -77,7 +77,8 @@
           "image": "sprites.other.home.front_default",
           "id": "id",
           "weight": "weight",
-          "height": "height"
+          "height": "height",
+          "habilidadesDeAPI": "abilities"
         }
       },
       "exec": [
@@ -97,7 +98,8 @@
                 "image": "{image}",
                 "id": "{id}",
                 "weight": "{weight}",
-                "height": "{height}"
+                "height": "{height}",
+                "habilidadesEnMaquina": "{habilidadesDeAPI}"
               }
             }
           ]
@@ -116,6 +118,24 @@
           "name": "StateMachine",
           "function": "getData",
           "params": ["authentication"]
+        }
+      ]
+    },
+    {
+      "name": "usePokemonList",
+      "componentType": "omni-hook",
+      "fetchOptions":{
+        "url": "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0",
+        "method": "GET"
+      },
+      "parseResponse": {
+        "to": {
+          "results": "results"
+        }
+      },
+      "exec": [
+        {
+          "name": "usePokemonList"
         }
       ]
     }
