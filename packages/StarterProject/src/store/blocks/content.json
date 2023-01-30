@@ -1,7 +1,6 @@
 {
   "store.walkthrough": {
     "children": [
-      "",
       {
         "componentName": "image",
         "props": {
@@ -421,6 +420,13 @@
         }
       },
       {
+        "componentName": "link",
+        "props": {
+          "text": "Go to Pokemon  list",
+          "href": "/pokemon-list"
+        }
+      },
+      {
         "componentName": "image",
         "props": {
           "context": "useMewtwoPokemon",
@@ -465,6 +471,38 @@
           "context": "usePokemonDetail",
           "text": "Height: {StateMachine.context.user.height}"
         }
+      },
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "Pokemon Skills:"
+        }
+      },
+      {
+        "componentName": "items-list"
+      }
+    ]
+  },
+  "store.pokemon-list": {
+    "importContext": ["usePokemonList"],
+    "children": [
+      {
+        "componentName": "rich-text",
+        "props": {
+          "text": "Lista Pokemon"
+        }
+      },
+      {
+        "componentName": "grid",
+        "props": {
+          "container": true,
+          "mode": "scroll-view"
+        },
+        "children": [
+          {
+            "componentName": "pokemon-list"
+          }
+        ]
       }
     ]
   }
