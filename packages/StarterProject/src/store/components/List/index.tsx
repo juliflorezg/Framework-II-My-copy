@@ -19,7 +19,8 @@ import {useExtension} from '@my-app/app/src/framework/engine/extension/context';
 interface PokemonListProps {
   children: React.ReactNode;
   style?: string;
-  text: string;
+  titleText: string;
+  hookName: string;
 }
 
 interface StyleProps {
@@ -40,13 +41,14 @@ const PokemonList: FC<BlockComponent<PokemonListProps>> = ({
   props,
   children,
 }) => {
+  const hookName = props?.hookName;
   const [data, setData] = useState({
     results: [],
   });
   //? aquí obtenemos info del hook
   const {hooks} = useExtension();
-  const context = 'usePokemonList';
-  const submit = hooks[context];
+  const context = hookName ?? 'usePokemonList';
+  const submit = hooks[context as unknown as number];
   //? ********************************
 
   const componentDidMount = async () => {
@@ -64,8 +66,9 @@ const PokemonList: FC<BlockComponent<PokemonListProps>> = ({
     <>
       {data && data?.results.length > 0 && (
         <View style={defaultStyles.container}>
+          <Text style={defaultStyles.title}>{props?.titleText}</Text>
           {data?.results.map((item: ItemOption, i: number) => (
-            <Text key={item.name + i} style={defaultStyles.title}>
+            <Text key={item.name + i} style={defaultStyles.listItem}>
               {' '}
               ~*~ {item.name}
             </Text>
@@ -88,7 +91,12 @@ const defaultStyles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
+    color: 'blue',
     fontWeight: 'bold',
+  },
+  listItem: {
+    fontSize: 18,
+    color: 'blue',
   },
 });

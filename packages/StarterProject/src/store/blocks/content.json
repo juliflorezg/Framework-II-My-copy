@@ -500,7 +500,11 @@
         },
         "children": [
           {
-            "componentName": "pokemon-list"
+            "componentName": "pokemon-list",
+            "props": {
+              "hookName": "usePokemonList",
+              "titleText": "Pokemons from API (custom title)"
+            }
           }
         ]
       }
