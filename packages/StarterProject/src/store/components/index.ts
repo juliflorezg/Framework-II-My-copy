@@ -37,14 +37,13 @@ import MiniInfoBanner from './common/MiniInfoBanner';
 import SearchInputComponent from './common/SeachInput';
 import TabsController from './Tabs';
 import TabPage from './Tabs/TabPage';
-import {
-  SearchQuery,
-} from './utils/vtexSearchQueryUtils';
+import {SearchQuery} from './utils/vtexSearchQueryUtils';
 import Logout from './Auth/Logout';
 import CartBadge from './Cart/CartBadge';
 import WishlistList from './Wishlist/WishlistList';
 import WishlistCounter from './Wishlist/WishlistCounter';
-
+import ItemsList from './ItemsList';
+import PokemonList from './List/index';
 
 const styleguide = {
   ui: {
@@ -70,10 +69,12 @@ const styleguide = {
     'tabs-controller': TabsController,
     'tabs-page': TabPage,
     'search-input': SearchInputComponent,
-    'logout': Logout,
+    logout: Logout,
     'cart-badge': CartBadge,
-    'wishlist-list':WishlistList,
-    'wishlist-counter':WishlistCounter,
+    'wishlist-list': WishlistList,
+    'wishlist-counter': WishlistCounter,
+    'items-list': ItemsList,
+    'pokemon-list': PokemonList,
     default: View,
   },
   icons: Icons,
@@ -84,7 +85,7 @@ const styleguide = {
       GetVariables: getSearchVariables,
       NormalizeProduct,
       SearchQuery,
-      NormalizeProductDetail
+      NormalizeProductDetail,
     },
     Conditions: {
       If: IfConditionalHandler,
@@ -97,4 +98,3 @@ const styleguide = {
 };
 
 export default styleguide;
- 
