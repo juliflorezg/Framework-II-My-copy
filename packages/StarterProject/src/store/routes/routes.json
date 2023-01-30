@@ -87,7 +87,13 @@
           "path": "home",
           "type": "Component",
           "options": {
-            "headerShown": false
+            "headerShown": true,
+            "title": "Pokemon Home",
+            "headerRightIconName": "NavSearchIcon",
+            "headerStyle": {
+              "backgroundColor": "wheat"
+            },
+            "headerTintColor": "#9a0052"
           }
         },
         "pokemon-detail": {
@@ -98,6 +104,14 @@
           }
         }
       }
+    },
+    "pokemon-list": {
+      "path": "pokemon-list",
+      "options": {
+        "headerShown": true,
+        "title": "Pokemon List"
+      },
+      "type": "Component"
     }
   }
 }
