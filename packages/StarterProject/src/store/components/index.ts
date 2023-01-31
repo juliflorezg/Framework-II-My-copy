@@ -44,6 +44,7 @@ import WishlistList from './Wishlist/WishlistList';
 import WishlistCounter from './Wishlist/WishlistCounter';
 import ItemsList from './ItemsList';
 import PokemonList from './List/index';
+import normalizePokemonSkills from '../../utils/normalizePokemonSkills';
 
 const styleguide = {
   ui: {
@@ -93,6 +94,9 @@ const styleguide = {
     Commons: {
       RandomPassword: randomPassword,
       MakeId: makeid,
+    },
+    PokemonInfo: {
+      normalizePokemonSkills,
     },
   },
 };
