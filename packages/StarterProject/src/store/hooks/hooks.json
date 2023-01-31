@@ -78,7 +78,18 @@
           "id": "id",
           "weight": "weight",
           "height": "height",
-          "habilidadesDeAPI": "abilities"
+          "habilidadesDeAPI": {
+            "pathValue": "abilities",
+            "parseFunction": "PokemonInfo",
+            "function": "normalizePokemonSkills",
+            "sync": true
+          },
+          "movimientosDeAPI": {
+            "pathValue": "moves",
+            "parseFunction": "PokemonInfo",
+            "function": "normalizePokemonSkills",
+            "sync": true
+          }
         }
       },
       "exec": [
@@ -99,7 +110,8 @@
                 "id": "{id}",
                 "weight": "{weight}",
                 "height": "{height}",
-                "habilidadesEnMaquina": "{habilidadesDeAPI}"
+                "habilidadesEnMaquina": "{habilidadesDeAPI}",
+                "movimientosEnMaquina": "{movimientosDeAPI}"
               }
             }
           ]
@@ -124,7 +136,7 @@
     {
       "name": "usePokemonList",
       "componentType": "omni-hook",
-      "fetchOptions":{
+      "fetchOptions": {
         "url": "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0",
         "method": "GET"
       },
