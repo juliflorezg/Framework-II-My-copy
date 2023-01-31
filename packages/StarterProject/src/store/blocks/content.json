@@ -479,7 +479,28 @@
         }
       },
       {
-        "componentName": "items-list"
+        "componentName": "grid",
+        "props": {
+          "mode": "scroll-view"
+        },
+        "children": [
+          {
+            "componentName": "items-list",
+            "props": {
+              "titleText": "Abilities",
+              "machineName": "authentication",
+              "pointer": "habilidadesEnMaquina"
+            }
+          },
+          {
+            "componentName": "items-list",
+            "props": {
+              "titleText": "Movimientos",
+              "machineName": "authentication",
+              "pointer": "movimientosEnMaquina"
+            }
+          }
+        ]
       }
     ]
   },
