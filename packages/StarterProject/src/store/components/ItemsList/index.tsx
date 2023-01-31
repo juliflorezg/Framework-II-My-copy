@@ -15,19 +15,23 @@ import useChildren from '@my-app/app/src/framework/engine/hooks/useChildren';
 
 import {BlockComponent} from '@my-app/app/src/framework/engine/types';
 
-type Ability = {
-  name: string;
-  url: string;
-};
+// type Ability = {
+//   name: string;
+//   url: string;
+// };
 
 type ItemOption = {
-  ability: Ability;
+  // ability: Ability;
+  name: string;
+  url: string;
 };
 
 type ItemsListProps = {
   children: React.ReactNode;
   style?: string;
-  text: string;
+  titleText: string;
+  machineName: string;
+  pointer: string;
 };
 
 type StyleProps = {
@@ -39,18 +43,17 @@ type StyleProps = {
   addCommentsWrapperText: ViewStyle;
 };
 
-const MachineConfig = {
-  machineName: 'authentication',
-  pointer: 'habilidadesEnMaquina',
-};
-
 const ItemsList: FC<BlockComponent<ItemsListProps>> = ({props, children}) => {
+  const MachineConfig = {
+    machineName: props.machineName,
+    pointer: props.pointer,
+  };
   const Styles = useStyles(props?.style) as StyleProps;
   const {StateMachine} = useCommons();
   const machines = useGlobalState() as object;
   const [{context}] = machines[MachineConfig.machineName]?.actor;
   const [data, setData] = useState({
-    abilities: [],
+    arrayItems: [],
   });
 
   useEffect(() => {
@@ -59,20 +62,21 @@ const ItemsList: FC<BlockComponent<ItemsListProps>> = ({props, children}) => {
     if (machine) {
       const {context} = machine;
       setData({
-        abilities: context.user.habilidadesEnMaquina,
+        arrayItems: context.user[MachineConfig.pointer],
       });
     }
-  }, [context[MachineConfig.pointer]]);
+  }, []);
 
   const childrens = useChildren({children});
 
   return (
     <>
-      {data && data?.abilities.length > 0 && (
+      {data && data?.arrayItems.length > 0 && (
         <View style={defaultStyles.container}>
-          {data?.abilities.map((ability: ItemOption, i: number) => (
-            <Text key={ability.ability.name + i} style={defaultStyles.title}>
-              {ability.ability.name}
+          <Text style={defaultStyles.title}>{props.titleText}</Text>
+          {data?.arrayItems.map((item: ItemOption, i: number) => (
+            <Text key={item.name + i} style={defaultStyles.item}>
+              {item.name}
             </Text>
           ))}
         </View>
@@ -95,5 +99,15 @@ const defaultStyles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
+  },
+  item: {
+    fontSize: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
 });
