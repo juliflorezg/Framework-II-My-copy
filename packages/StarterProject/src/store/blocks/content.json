@@ -427,11 +427,21 @@
         }
       },
       {
-        "componentName": "image",
+        "componentName": "grid",
         "props": {
-          "context": "useMewtwoPokemon",
-          "uri": "{useMewtwoPokemon.image}"
-        }
+          "container": true,
+          "style": "home-pokemon-image-container"
+        },
+        "children": [
+          {
+            "componentName": "image",
+            "props": {
+              "context": "useMewtwoPokemon",
+              "uri": "{useMewtwoPokemon.image}",
+              "width": 250
+            }
+          }
+        ]
       }
     ]
   },
