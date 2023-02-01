@@ -1,16 +1,7 @@
 import {useCommons} from '@my-app/app/src/framework/omni-logic/kernel/utils/use-hook';
-import {useGlobalState} from '@my-app/app/src/framework/state-machine';
 import useStyles from '@my-app/app/src/framework/styleguide/hooks/useStyles';
-import {ArrowRightSecondVariant} from '@my-app/ui/src/icons';
 import React, {FC, useEffect, useState} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  ViewStyle,
-  TextStyle,
-} from 'react-native';
+import {View, Text, StyleSheet, ViewStyle, TextStyle} from 'react-native';
 import useChildren from '@my-app/app/src/framework/engine/hooks/useChildren';
 
 import {BlockComponent} from '@my-app/app/src/framework/engine/types';
@@ -50,8 +41,6 @@ const ItemsList: FC<BlockComponent<ItemsListProps>> = ({props, children}) => {
   };
   const Styles = useStyles(props?.style) as StyleProps;
   const {StateMachine} = useCommons();
-  const machines = useGlobalState() as object;
-  const [{context}] = machines[MachineConfig.machineName]?.actor;
   const [data, setData] = useState({
     arrayItems: [],
   });
@@ -73,6 +62,7 @@ const ItemsList: FC<BlockComponent<ItemsListProps>> = ({props, children}) => {
     <>
       {data && data?.arrayItems.length > 0 && (
         <View style={defaultStyles.container}>
+          <Text>{JSON.stringify(data.arrayItems)}</Text>
           <Text style={defaultStyles.title}>{props.titleText}</Text>
           {data?.arrayItems.map((item: ItemOption, i: number) => (
             <Text key={item.name + i} style={defaultStyles.item}>
