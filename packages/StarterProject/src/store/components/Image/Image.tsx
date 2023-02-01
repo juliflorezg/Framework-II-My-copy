@@ -4,6 +4,8 @@ import useChildren from '@my-app/app/src/framework/engine/hooks/useChildren';
 import {BlockComponent} from '@my-app/app/src/framework/engine/types';
 import {useSharedValue} from '../RichText';
 import {addVarToString} from '@my-app/app/src/framework/omni-logic/plugin/utils/addVarToString';
+import {ImageStyle, StyleProp} from 'react-native';
+
 
 const ImageComponent: FC<
   BlockComponent<{
@@ -11,6 +13,9 @@ const ImageComponent: FC<
     type?: string;
     uri?: string;
     resizeMode?: 'center' | 'repeat' | 'cover' | 'contain' | 'stretch';
+    width: string | number;
+    height: string | number;
+    style?: StyleProp<ImageStyle>;
   }>
 > = ({children, props = {type: 'default'}}) => {
   const childrens = useChildren({children});
@@ -46,6 +51,7 @@ const ImageComponent: FC<
         //@ts-ignore
         height={props?.height}
         resizeMode={props?.resizeMode}
+        style={props?.style}
       />
     );
   };
